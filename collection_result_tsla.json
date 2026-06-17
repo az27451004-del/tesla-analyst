@@ -1,0 +1,4213 @@
+{
+  "collection_summary": {
+    "symbol": "TSLA",
+    "company_name": "Tesla, Inc.",
+    "collection_time": "2026-06-16T14:34:52+00:00",
+    "data_sources_used": [
+      "alpha_vantage",
+      "sec_edgar",
+      "fred",
+      "rss"
+    ],
+    "data_sources_failed": [],
+    "total_events_collected": 65,
+    "total_events_after_dedup": 65,
+    "freshness_status": "FRESH",
+    "overall_quality": "HIGH",
+    "can_generate_analysis": true,
+    "confidence_cap": "HIGH",
+    "ibkr_status": {
+      "enabled": false,
+      "connected": false,
+      "market_data_type": "",
+      "has_realtime_permission": false,
+      "has_options_permission": false,
+      "account_data_allowed": false,
+      "warnings": []
+    }
+  },
+  "market_data": [
+    {
+      "date_time": "2026-01-22T00:00:00+00:00",
+      "open": 435.16,
+      "high": 449.5,
+      "low": 432.63,
+      "close": 449.36,
+      "adjusted_close": null,
+      "volume": 71546729.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "435.1600",
+          "2. high": "449.5000",
+          "3. low": "432.6300",
+          "4. close": "449.3600",
+          "5. volume": "71546729"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-01-23T00:00:00+00:00",
+      "open": 447.425,
+      "high": 452.43,
+      "low": 444.04,
+      "close": 449.06,
+      "adjusted_close": null,
+      "volume": 56771364.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "447.4250",
+          "2. high": "452.4300",
+          "3. low": "444.0400",
+          "4. close": "449.0600",
+          "5. volume": "56771364"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-01-26T00:00:00+00:00",
+      "open": 445.0,
+      "high": 445.04,
+      "low": 434.28,
+      "close": 435.2,
+      "adjusted_close": null,
+      "volume": 49397415.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "445.0000",
+          "2. high": "445.0400",
+          "3. low": "434.2800",
+          "4. close": "435.2000",
+          "5. volume": "49397415"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-01-27T00:00:00+00:00",
+      "open": 437.41,
+      "high": 437.52,
+      "low": 430.69,
+      "close": 430.9,
+      "adjusted_close": null,
+      "volume": 37321502.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "437.4100",
+          "2. high": "437.5200",
+          "3. low": "430.6900",
+          "4. close": "430.9000",
+          "5. volume": "37321502"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-01-28T00:00:00+00:00",
+      "open": 431.91,
+      "high": 438.26,
+      "low": 430.1,
+      "close": 431.46,
+      "adjusted_close": null,
+      "volume": 54857403.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "431.9100",
+          "2. high": "438.2600",
+          "3. low": "430.1000",
+          "4. close": "431.4600",
+          "5. volume": "54857403"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-01-29T00:00:00+00:00",
+      "open": 437.8,
+      "high": 440.2299,
+      "low": 414.62,
+      "close": 416.56,
+      "adjusted_close": null,
+      "volume": 81686127.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "437.8000",
+          "2. high": "440.2299",
+          "3. low": "414.6200",
+          "4. close": "416.5600",
+          "5. volume": "81686127"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-01-30T00:00:00+00:00",
+      "open": 425.35,
+      "high": 439.88,
+      "low": 422.7,
+      "close": 430.41,
+      "adjusted_close": null,
+      "volume": 82626066.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "425.3500",
+          "2. high": "439.8800",
+          "3. low": "422.7000",
+          "4. close": "430.4100",
+          "5. volume": "82626066"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-02T00:00:00+00:00",
+      "open": 421.29,
+      "high": 427.15,
+      "low": 414.5,
+      "close": 421.81,
+      "adjusted_close": null,
+      "volume": 58739455.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "421.2900",
+          "2. high": "427.1500",
+          "3. low": "414.5000",
+          "4. close": "421.8100",
+          "5. volume": "58739455"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-03T00:00:00+00:00",
+      "open": 424.27,
+      "high": 428.56,
+      "low": 413.6901,
+      "close": 421.96,
+      "adjusted_close": null,
+      "volume": 56269638.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "424.2700",
+          "2. high": "428.5600",
+          "3. low": "413.6901",
+          "4. close": "421.9600",
+          "5. volume": "56269638"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-04T00:00:00+00:00",
+      "open": 420.46,
+      "high": 423.9,
+      "low": 399.18,
+      "close": 406.01,
+      "adjusted_close": null,
+      "volume": 74606873.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "420.4600",
+          "2. high": "423.9000",
+          "3. low": "399.1800",
+          "4. close": "406.0100",
+          "5. volume": "74606873"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-05T00:00:00+00:00",
+      "open": 397.015,
+      "high": 402.1,
+      "low": 387.5309,
+      "close": 397.21,
+      "adjusted_close": null,
+      "volume": 72819838.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "397.0150",
+          "2. high": "402.1000",
+          "3. low": "387.5309",
+          "4. close": "397.2100",
+          "5. volume": "72819838"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-06T00:00:00+00:00",
+      "open": 400.87,
+      "high": 414.55,
+      "low": 397.751,
+      "close": 411.11,
+      "adjusted_close": null,
+      "volume": 62677144.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "400.8700",
+          "2. high": "414.5500",
+          "3. low": "397.7510",
+          "4. close": "411.1100",
+          "5. volume": "62677144"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-09T00:00:00+00:00",
+      "open": 409.905,
+      "high": 421.25,
+      "low": 407.29,
+      "close": 417.32,
+      "adjusted_close": null,
+      "volume": 54484258.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "409.9050",
+          "2. high": "421.2500",
+          "3. low": "407.2900",
+          "4. close": "417.3200",
+          "5. volume": "54484258"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-10T00:00:00+00:00",
+      "open": 418.08,
+      "high": 427.25,
+      "low": 417.0,
+      "close": 425.21,
+      "adjusted_close": null,
+      "volume": 64450233.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "418.0800",
+          "2. high": "427.2500",
+          "3. low": "417.0000",
+          "4. close": "425.2100",
+          "5. volume": "64450233"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-11T00:00:00+00:00",
+      "open": 427.955,
+      "high": 436.35,
+      "low": 420.03,
+      "close": 428.27,
+      "adjusted_close": null,
+      "volume": 57361989.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "427.9550",
+          "2. high": "436.3500",
+          "3. low": "420.0300",
+          "4. close": "428.2700",
+          "5. volume": "57361989"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-12T00:00:00+00:00",
+      "open": 430.3,
+      "high": 436.23,
+      "low": 414.0,
+      "close": 417.07,
+      "adjusted_close": null,
+      "volume": 61933359.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "430.3000",
+          "2. high": "436.2300",
+          "3. low": "414.0000",
+          "4. close": "417.0700",
+          "5. volume": "61933359"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-13T00:00:00+00:00",
+      "open": 414.305,
+      "high": 424.06,
+      "low": 410.88,
+      "close": 417.44,
+      "adjusted_close": null,
+      "volume": 51434147.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "414.3050",
+          "2. high": "424.0600",
+          "3. low": "410.8800",
+          "4. close": "417.4400",
+          "5. volume": "51434147"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-17T00:00:00+00:00",
+      "open": 412.36,
+      "high": 413.72,
+      "low": 400.51,
+      "close": 410.63,
+      "adjusted_close": null,
+      "volume": 59678789.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "412.3600",
+          "2. high": "413.7200",
+          "3. low": "400.5100",
+          "4. close": "410.6300",
+          "5. volume": "59678789"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-18T00:00:00+00:00",
+      "open": 411.11,
+      "high": 416.9,
+      "low": 409.58,
+      "close": 411.32,
+      "adjusted_close": null,
+      "volume": 45921402.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "411.1100",
+          "2. high": "416.9000",
+          "3. low": "409.5800",
+          "4. close": "411.3200",
+          "5. volume": "45921402"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-19T00:00:00+00:00",
+      "open": 407.25,
+      "high": 415.2499,
+      "low": 404.11,
+      "close": 411.71,
+      "adjusted_close": null,
+      "volume": 51019638.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "407.2500",
+          "2. high": "415.2499",
+          "3. low": "404.1100",
+          "4. close": "411.7100",
+          "5. volume": "51019638"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-20T00:00:00+00:00",
+      "open": 408.3,
+      "high": 414.7,
+      "low": 405.5,
+      "close": 411.82,
+      "adjusted_close": null,
+      "volume": 57912225.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "408.3000",
+          "2. high": "414.7000",
+          "3. low": "405.5000",
+          "4. close": "411.8200",
+          "5. volume": "57912225"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-23T00:00:00+00:00",
+      "open": 407.285,
+      "high": 407.7,
+      "low": 394.04,
+      "close": 399.83,
+      "adjusted_close": null,
+      "volume": 69680026.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "407.2850",
+          "2. high": "407.7000",
+          "3. low": "394.0400",
+          "4. close": "399.8300",
+          "5. volume": "69680026"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-24T00:00:00+00:00",
+      "open": 399.5,
+      "high": 410.82,
+      "low": 397.64,
+      "close": 409.38,
+      "adjusted_close": null,
+      "volume": 58579482.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "399.5000",
+          "2. high": "410.8200",
+          "3. low": "397.6400",
+          "4. close": "409.3800",
+          "5. volume": "58579482"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-25T00:00:00+00:00",
+      "open": 412.15,
+      "high": 420.34,
+      "low": 412.15,
+      "close": 417.4,
+      "adjusted_close": null,
+      "volume": 54809704.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "412.1500",
+          "2. high": "420.3400",
+          "3. low": "412.1500",
+          "4. close": "417.4000",
+          "5. volume": "54809704"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-26T00:00:00+00:00",
+      "open": 414.42,
+      "high": 416.81,
+      "low": 403.66,
+      "close": 408.58,
+      "adjusted_close": null,
+      "volume": 53602497.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "414.4200",
+          "2. high": "416.8100",
+          "3. low": "403.6600",
+          "4. close": "408.5800",
+          "5. volume": "53602497"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-02-27T00:00:00+00:00",
+      "open": 402.94,
+      "high": 407.12,
+      "low": 398.11,
+      "close": 402.51,
+      "adjusted_close": null,
+      "volume": 56890097.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "402.9400",
+          "2. high": "407.1200",
+          "3. low": "398.1100",
+          "4. close": "402.5100",
+          "5. volume": "56890097"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-02T00:00:00+00:00",
+      "open": 390.6,
+      "high": 404.54,
+      "low": 388.25,
+      "close": 403.32,
+      "adjusted_close": null,
+      "volume": 55088338.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "390.6000",
+          "2. high": "404.5400",
+          "3. low": "388.2500",
+          "4. close": "403.3200",
+          "5. volume": "55088338"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-03T00:00:00+00:00",
+      "open": 395.09,
+      "high": 396.34,
+      "low": 385.39,
+      "close": 392.43,
+      "adjusted_close": null,
+      "volume": 62617298.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "395.0900",
+          "2. high": "396.3400",
+          "3. low": "385.3900",
+          "4. close": "392.4300",
+          "5. volume": "62617298"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-04T00:00:00+00:00",
+      "open": 397.845,
+      "high": 408.33,
+      "low": 394.58,
+      "close": 405.94,
+      "adjusted_close": null,
+      "volume": 68305513.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "397.8450",
+          "2. high": "408.3300",
+          "3. low": "394.5800",
+          "4. close": "405.9400",
+          "5. volume": "68305513"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-05T00:00:00+00:00",
+      "open": 401.57,
+      "high": 408.62,
+      "low": 399.42,
+      "close": 405.55,
+      "adjusted_close": null,
+      "volume": 51925898.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "401.5700",
+          "2. high": "408.6200",
+          "3. low": "399.4200",
+          "4. close": "405.5500",
+          "5. volume": "51925898"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-06T00:00:00+00:00",
+      "open": 398.09,
+      "high": 402.35,
+      "low": 394.21,
+      "close": 396.73,
+      "adjusted_close": null,
+      "volume": 64054561.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "398.0900",
+          "2. high": "402.3500",
+          "3. low": "394.2100",
+          "4. close": "396.7300",
+          "5. volume": "64054561"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-09T00:00:00+00:00",
+      "open": 390.05,
+      "high": 401.59,
+      "low": 381.4,
+      "close": 398.68,
+      "adjusted_close": null,
+      "volume": 67018911.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "390.0500",
+          "2. high": "401.5900",
+          "3. low": "381.4000",
+          "4. close": "398.6800",
+          "5. volume": "67018911"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-10T00:00:00+00:00",
+      "open": 402.22,
+      "high": 406.59,
+      "low": 398.19,
+      "close": 399.235,
+      "adjusted_close": null,
+      "volume": 59258743.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "402.2200",
+          "2. high": "406.5900",
+          "3. low": "398.1900",
+          "4. close": "399.2350",
+          "5. volume": "59258743"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-11T00:00:00+00:00",
+      "open": 402.28,
+      "high": 416.3799,
+      "low": 402.15,
+      "close": 407.82,
+      "adjusted_close": null,
+      "volume": 62559930.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "402.2800",
+          "2. high": "416.3799",
+          "3. low": "402.1500",
+          "4. close": "407.8200",
+          "5. volume": "62559930"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-12T00:00:00+00:00",
+      "open": 405.175,
+      "high": 406.5,
+      "low": 394.65,
+      "close": 395.01,
+      "adjusted_close": null,
+      "volume": 60973793.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "405.1750",
+          "2. high": "406.5000",
+          "3. low": "394.6500",
+          "4. close": "395.0100",
+          "5. volume": "60973793"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-13T00:00:00+00:00",
+      "open": 399.165,
+      "high": 400.2,
+      "low": 389.95,
+      "close": 391.2,
+      "adjusted_close": null,
+      "volume": 58504091.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "399.1650",
+          "2. high": "400.2000",
+          "3. low": "389.9500",
+          "4. close": "391.2000",
+          "5. volume": "58504091"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-16T00:00:00+00:00",
+      "open": 396.22,
+      "high": 403.73,
+      "low": 394.42,
+      "close": 395.56,
+      "adjusted_close": null,
+      "volume": 58068343.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "396.2200",
+          "2. high": "403.7300",
+          "3. low": "394.4200",
+          "4. close": "395.5600",
+          "5. volume": "58068343"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-17T00:00:00+00:00",
+      "open": 395.69,
+      "high": 400.12,
+      "low": 393.0,
+      "close": 399.27,
+      "adjusted_close": null,
+      "volume": 46890467.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "395.6900",
+          "2. high": "400.1200",
+          "3. low": "393.0000",
+          "4. close": "399.2700",
+          "5. volume": "46890467"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-18T00:00:00+00:00",
+      "open": 399.0,
+      "high": 403.065,
+      "low": 392.31,
+      "close": 392.78,
+      "adjusted_close": null,
+      "volume": 50853149.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "399.0000",
+          "2. high": "403.0650",
+          "3. low": "392.3100",
+          "4. close": "392.7800",
+          "5. volume": "50853149"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-19T00:00:00+00:00",
+      "open": 387.27,
+      "high": 387.27,
+      "low": 378.73,
+      "close": 380.3,
+      "adjusted_close": null,
+      "volume": 67078259.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "387.2700",
+          "2. high": "387.2700",
+          "3. low": "378.7300",
+          "4. close": "380.3000",
+          "5. volume": "67078259"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-20T00:00:00+00:00",
+      "open": 379.85,
+      "high": 379.89,
+      "low": 364.4601,
+      "close": 367.96,
+      "adjusted_close": null,
+      "volume": 78628603.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "379.8500",
+          "2. high": "379.8900",
+          "3. low": "364.4601",
+          "4. close": "367.9600",
+          "5. volume": "78628603"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-23T00:00:00+00:00",
+      "open": 373.09,
+      "high": 385.33,
+      "low": 372.73,
+      "close": 380.85,
+      "adjusted_close": null,
+      "volume": 74606049.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "373.0900",
+          "2. high": "385.3300",
+          "3. low": "372.7300",
+          "4. close": "380.8500",
+          "5. volume": "74606049"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-24T00:00:00+00:00",
+      "open": 376.56,
+      "high": 387.48,
+      "low": 376.31,
+      "close": 383.03,
+      "adjusted_close": null,
+      "volume": 60004909.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "376.5600",
+          "2. high": "387.4800",
+          "3. low": "376.3100",
+          "4. close": "383.0300",
+          "5. volume": "60004909"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-25T00:00:00+00:00",
+      "open": 389.99,
+      "high": 396.23,
+      "low": 385.01,
+      "close": 385.95,
+      "adjusted_close": null,
+      "volume": 55157265.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "389.9900",
+          "2. high": "396.2300",
+          "3. low": "385.0100",
+          "4. close": "385.9500",
+          "5. volume": "55157265"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-26T00:00:00+00:00",
+      "open": 381.6,
+      "high": 384.44,
+      "low": 371.87,
+      "close": 372.11,
+      "adjusted_close": null,
+      "volume": 55522879.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "381.6000",
+          "2. high": "384.4400",
+          "3. low": "371.8700",
+          "4. close": "372.1100",
+          "5. volume": "55522879"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-27T00:00:00+00:00",
+      "open": 369.69,
+      "high": 369.86,
+      "low": 359.47,
+      "close": 361.83,
+      "adjusted_close": null,
+      "volume": 62065659.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "369.6900",
+          "2. high": "369.8600",
+          "3. low": "359.4700",
+          "4. close": "361.8300",
+          "5. volume": "62065659"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-30T00:00:00+00:00",
+      "open": 365.86,
+      "high": 367.29,
+      "low": 352.14,
+      "close": 355.28,
+      "adjusted_close": null,
+      "volume": 67954405.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "365.8600",
+          "2. high": "367.2900",
+          "3. low": "352.1400",
+          "4. close": "355.2800",
+          "5. volume": "67954405"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-03-31T00:00:00+00:00",
+      "open": 361.51,
+      "high": 373.33,
+      "low": 361.0,
+      "close": 371.75,
+      "adjusted_close": null,
+      "volume": 75534934.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "361.5100",
+          "2. high": "373.3300",
+          "3. low": "361.0000",
+          "4. close": "371.7500",
+          "5. volume": "75534934"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-01T00:00:00+00:00",
+      "open": 378.63,
+      "high": 383.14,
+      "low": 374.08,
+      "close": 381.26,
+      "adjusted_close": null,
+      "volume": 58683752.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "378.6300",
+          "2. high": "383.1400",
+          "3. low": "374.0800",
+          "4. close": "381.2600",
+          "5. volume": "58683752"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-02T00:00:00+00:00",
+      "open": 364.195,
+      "high": 370.28,
+      "low": 359.03,
+      "close": 360.59,
+      "adjusted_close": null,
+      "volume": 83031226.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "364.1950",
+          "2. high": "370.2800",
+          "3. low": "359.0300",
+          "4. close": "360.5900",
+          "5. volume": "83031226"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-06T00:00:00+00:00",
+      "open": 362.59,
+      "high": 367.72,
+      "low": 346.64,
+      "close": 352.82,
+      "adjusted_close": null,
+      "volume": 77697643.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "362.5900",
+          "2. high": "367.7200",
+          "3. low": "346.6400",
+          "4. close": "352.8200",
+          "5. volume": "77697643"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-07T00:00:00+00:00",
+      "open": 346.44,
+      "high": 348.02,
+      "low": 337.24,
+      "close": 346.65,
+      "adjusted_close": null,
+      "volume": 74515355.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "346.4400",
+          "2. high": "348.0200",
+          "3. low": "337.2400",
+          "4. close": "346.6500",
+          "5. volume": "74515355"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-08T00:00:00+00:00",
+      "open": 363.79,
+      "high": 364.5,
+      "low": 339.67,
+      "close": 343.25,
+      "adjusted_close": null,
+      "volume": 78838616.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "363.7900",
+          "2. high": "364.5000",
+          "3. low": "339.6700",
+          "4. close": "343.2500",
+          "5. volume": "78838616"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-09T00:00:00+00:00",
+      "open": 343.15,
+      "high": 348.88,
+      "low": 337.25,
+      "close": 345.62,
+      "adjusted_close": null,
+      "volume": 62164016.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "343.1500",
+          "2. high": "348.8800",
+          "3. low": "337.2500",
+          "4. close": "345.6200",
+          "5. volume": "62164016"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-10T00:00:00+00:00",
+      "open": 346.285,
+      "high": 350.36,
+      "low": 342.74,
+      "close": 348.95,
+      "adjusted_close": null,
+      "volume": 51336034.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "346.2850",
+          "2. high": "350.3600",
+          "3. low": "342.7400",
+          "4. close": "348.9500",
+          "5. volume": "51336034"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-13T00:00:00+00:00",
+      "open": 350.065,
+      "high": 356.35,
+      "low": 348.57,
+      "close": 352.42,
+      "adjusted_close": null,
+      "volume": 53617477.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "350.0650",
+          "2. high": "356.3500",
+          "3. low": "348.5700",
+          "4. close": "352.4200",
+          "5. volume": "53617477"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-14T00:00:00+00:00",
+      "open": 357.67,
+      "high": 367.63,
+      "low": 354.77,
+      "close": 364.2,
+      "adjusted_close": null,
+      "volume": 59979607.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "357.6700",
+          "2. high": "367.6300",
+          "3. low": "354.7700",
+          "4. close": "364.2000",
+          "5. volume": "59979607"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-15T00:00:00+00:00",
+      "open": 366.83,
+      "high": 394.65,
+      "low": 362.5,
+      "close": 391.95,
+      "adjusted_close": null,
+      "volume": 113810355.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "366.8300",
+          "2. high": "394.6500",
+          "3. low": "362.5000",
+          "4. close": "391.9500",
+          "5. volume": "113810355"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-16T00:00:00+00:00",
+      "open": 393.81,
+      "high": 394.06,
+      "low": 381.8,
+      "close": 388.9,
+      "adjusted_close": null,
+      "volume": 63515136.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "393.8100",
+          "2. high": "394.0600",
+          "3. low": "381.8000",
+          "4. close": "388.9000",
+          "5. volume": "63515136"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-17T00:00:00+00:00",
+      "open": 395.92,
+      "high": 409.28,
+      "low": 391.65,
+      "close": 400.62,
+      "adjusted_close": null,
+      "volume": 90640032.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "395.9200",
+          "2. high": "409.2800",
+          "3. low": "391.6500",
+          "4. close": "400.6200",
+          "5. volume": "90640032"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-20T00:00:00+00:00",
+      "open": 402.58,
+      "high": 406.8,
+      "low": 388.33,
+      "close": 392.5,
+      "adjusted_close": null,
+      "volume": 64603868.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "402.5800",
+          "2. high": "406.8000",
+          "3. low": "388.3300",
+          "4. close": "392.5000",
+          "5. volume": "64603868"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-21T00:00:00+00:00",
+      "open": 393.0,
+      "high": 393.95,
+      "low": 385.2201,
+      "close": 386.42,
+      "adjusted_close": null,
+      "volume": 50530611.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "393.0000",
+          "2. high": "393.9500",
+          "3. low": "385.2201",
+          "4. close": "386.4200",
+          "5. volume": "50530611"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-22T00:00:00+00:00",
+      "open": 387.57,
+      "high": 393.01,
+      "low": 385.3,
+      "close": 387.51,
+      "adjusted_close": null,
+      "volume": 62362785.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "387.5700",
+          "2. high": "393.0100",
+          "3. low": "385.3000",
+          "4. close": "387.5100",
+          "5. volume": "62362785"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-23T00:00:00+00:00",
+      "open": 375.28,
+      "high": 386.0,
+      "low": 368.39,
+      "close": 373.72,
+      "adjusted_close": null,
+      "volume": 93969510.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "375.2800",
+          "2. high": "386.0000",
+          "3. low": "368.3900",
+          "4. close": "373.7200",
+          "5. volume": "93969510"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-24T00:00:00+00:00",
+      "open": 373.5,
+      "high": 382.76,
+      "low": 370.73,
+      "close": 376.3,
+      "adjusted_close": null,
+      "volume": 62893307.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "373.5000",
+          "2. high": "382.7600",
+          "3. low": "370.7300",
+          "4. close": "376.3000",
+          "5. volume": "62893307"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-27T00:00:00+00:00",
+      "open": 372.09,
+      "high": 380.78,
+      "low": 364.02,
+      "close": 378.67,
+      "adjusted_close": null,
+      "volume": 66735816.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "372.0900",
+          "2. high": "380.7800",
+          "3. low": "364.0200",
+          "4. close": "378.6700",
+          "5. volume": "66735816"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-28T00:00:00+00:00",
+      "open": 374.675,
+      "high": 382.29,
+      "low": 372.54,
+      "close": 376.02,
+      "adjusted_close": null,
+      "volume": 50864357.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "374.6750",
+          "2. high": "382.2900",
+          "3. low": "372.5400",
+          "4. close": "376.0200",
+          "5. volume": "50864357"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-29T00:00:00+00:00",
+      "open": 375.4,
+      "high": 376.4,
+      "low": 370.04,
+      "close": 372.8,
+      "adjusted_close": null,
+      "volume": 45384836.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "375.4000",
+          "2. high": "376.4000",
+          "3. low": "370.0400",
+          "4. close": "372.8000",
+          "5. volume": "45384836"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-04-30T00:00:00+00:00",
+      "open": 372.75,
+      "high": 384.75,
+      "low": 368.17,
+      "close": 381.63,
+      "adjusted_close": null,
+      "volume": 51076041.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "372.7500",
+          "2. high": "384.7500",
+          "3. low": "368.1700",
+          "4. close": "381.6300",
+          "5. volume": "51076041"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-01T00:00:00+00:00",
+      "open": 382.485,
+      "high": 397.8211,
+      "low": 378.8,
+      "close": 390.82,
+      "adjusted_close": null,
+      "volume": 65338257.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "382.4850",
+          "2. high": "397.8211",
+          "3. low": "378.8000",
+          "4. close": "390.8200",
+          "5. volume": "65338257"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-04T00:00:00+00:00",
+      "open": 390.23,
+      "high": 394.64,
+      "low": 384.8004,
+      "close": 392.51,
+      "adjusted_close": null,
+      "volume": 48765143.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "390.2300",
+          "2. high": "394.6400",
+          "3. low": "384.8004",
+          "4. close": "392.5100",
+          "5. volume": "48765143"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-05T00:00:00+00:00",
+      "open": 395.185,
+      "high": 402.12,
+      "low": 389.0,
+      "close": 389.37,
+      "adjusted_close": null,
+      "volume": 47780631.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "395.1850",
+          "2. high": "402.1200",
+          "3. low": "389.0000",
+          "4. close": "389.3700",
+          "5. volume": "47780631"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-06T00:00:00+00:00",
+      "open": 386.25,
+      "high": 401.68,
+      "low": 384.02,
+      "close": 398.73,
+      "adjusted_close": null,
+      "volume": 53465365.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "386.2500",
+          "2. high": "401.6800",
+          "3. low": "384.0200",
+          "4. close": "398.7300",
+          "5. volume": "53465365"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-07T00:00:00+00:00",
+      "open": 407.48,
+      "high": 415.83,
+      "low": 402.12,
+      "close": 411.79,
+      "adjusted_close": null,
+      "volume": 64294224.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "407.4800",
+          "2. high": "415.8300",
+          "3. low": "402.1200",
+          "4. close": "411.7900",
+          "5. volume": "64294224"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-08T00:00:00+00:00",
+      "open": 416.475,
+      "high": 431.2,
+      "low": 416.39,
+      "close": 428.35,
+      "adjusted_close": null,
+      "volume": 65049970.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "416.4750",
+          "2. high": "431.2000",
+          "3. low": "416.3900",
+          "4. close": "428.3500",
+          "5. volume": "65049970"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-11T00:00:00+00:00",
+      "open": 422.16,
+      "high": 449.16,
+      "low": 416.8,
+      "close": 445.0,
+      "adjusted_close": null,
+      "volume": 78376127.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "422.1600",
+          "2. high": "449.1600",
+          "3. low": "416.8000",
+          "4. close": "445.0000",
+          "5. volume": "78376127"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-12T00:00:00+00:00",
+      "open": 441.41,
+      "high": 447.8,
+      "low": 422.26,
+      "close": 433.45,
+      "adjusted_close": null,
+      "volume": 60569303.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "441.4100",
+          "2. high": "447.8000",
+          "3. low": "422.2600",
+          "4. close": "433.4500",
+          "5. volume": "60569303"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-13T00:00:00+00:00",
+      "open": 436.665,
+      "high": 453.4,
+      "low": 430.21,
+      "close": 445.27,
+      "adjusted_close": null,
+      "volume": 68283229.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "436.6650",
+          "2. high": "453.4000",
+          "3. low": "430.2100",
+          "4. close": "445.2700",
+          "5. volume": "68283229"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-14T00:00:00+00:00",
+      "open": 446.49,
+      "high": 451.98,
+      "low": 441.16,
+      "close": 443.3,
+      "adjusted_close": null,
+      "volume": 46070361.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "446.4900",
+          "2. high": "451.9800",
+          "3. low": "441.1600",
+          "4. close": "443.3000",
+          "5. volume": "46070361"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-15T00:00:00+00:00",
+      "open": 433.98,
+      "high": 434.66,
+      "low": 422.0,
+      "close": 422.24,
+      "adjusted_close": null,
+      "volume": 52688742.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "433.9800",
+          "2. high": "434.6600",
+          "3. low": "422.0000",
+          "4. close": "422.2400",
+          "5. volume": "52688742"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-18T00:00:00+00:00",
+      "open": 419.27,
+      "high": 421.13,
+      "low": 405.33,
+      "close": 409.99,
+      "adjusted_close": null,
+      "volume": 52474188.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "419.2700",
+          "2. high": "421.1300",
+          "3. low": "405.3300",
+          "4. close": "409.9900",
+          "5. volume": "52474188"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-19T00:00:00+00:00",
+      "open": 403.16,
+      "high": 405.63,
+      "low": 393.63,
+      "close": 404.11,
+      "adjusted_close": null,
+      "volume": 46500551.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "403.1600",
+          "2. high": "405.6300",
+          "3. low": "393.6300",
+          "4. close": "404.1100",
+          "5. volume": "46500551"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-20T00:00:00+00:00",
+      "open": 407.6,
+      "high": 417.46,
+      "low": 406.39,
+      "close": 417.26,
+      "adjusted_close": null,
+      "volume": 44484579.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "407.6000",
+          "2. high": "417.4600",
+          "3. low": "406.3900",
+          "4. close": "417.2600",
+          "5. volume": "44484579"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-21T00:00:00+00:00",
+      "open": 422.175,
+      "high": 426.95,
+      "low": 412.9,
+      "close": 417.85,
+      "adjusted_close": null,
+      "volume": 42636854.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "422.1750",
+          "2. high": "426.9500",
+          "3. low": "412.9000",
+          "4. close": "417.8500",
+          "5. volume": "42636854"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-22T00:00:00+00:00",
+      "open": 422.665,
+      "high": 431.51,
+      "low": 420.51,
+      "close": 426.01,
+      "adjusted_close": null,
+      "volume": 46104710.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "422.6650",
+          "2. high": "431.5100",
+          "3. low": "420.5100",
+          "4. close": "426.0100",
+          "5. volume": "46104710"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-26T00:00:00+00:00",
+      "open": 430.26,
+      "high": 435.2,
+      "low": 426.12,
+      "close": 433.59,
+      "adjusted_close": null,
+      "volume": 45658897.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "430.2600",
+          "2. high": "435.2000",
+          "3. low": "426.1200",
+          "4. close": "433.5900",
+          "5. volume": "45658897"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-27T00:00:00+00:00",
+      "open": 442.89,
+      "high": 445.6,
+      "low": 435.52,
+      "close": 440.36,
+      "adjusted_close": null,
+      "volume": 44656505.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "442.8900",
+          "2. high": "445.6000",
+          "3. low": "435.5200",
+          "4. close": "440.3600",
+          "5. volume": "44656505"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-28T00:00:00+00:00",
+      "open": 437.615,
+      "high": 443.96,
+      "low": 436.3,
+      "close": 442.1,
+      "adjusted_close": null,
+      "volume": 32434996.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "437.6150",
+          "2. high": "443.9600",
+          "3. low": "436.3000",
+          "4. close": "442.1000",
+          "5. volume": "32434996"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-05-29T00:00:00+00:00",
+      "open": 439.845,
+      "high": 441.07,
+      "low": 428.14,
+      "close": 435.79,
+      "adjusted_close": null,
+      "volume": 45176821.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "439.8450",
+          "2. high": "441.0700",
+          "3. low": "428.1400",
+          "4. close": "435.7900",
+          "5. volume": "45176821"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-01T00:00:00+00:00",
+      "open": 427.49,
+      "high": 429.6,
+      "low": 415.43,
+      "close": 415.88,
+      "adjusted_close": null,
+      "volume": 44937852.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "427.4900",
+          "2. high": "429.6000",
+          "3. low": "415.4300",
+          "4. close": "415.8800",
+          "5. volume": "44937852"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-02T00:00:00+00:00",
+      "open": 418.22,
+      "high": 424.42,
+      "low": 413.65,
+      "close": 423.74,
+      "adjusted_close": null,
+      "volume": 37596045.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "418.2200",
+          "2. high": "424.4200",
+          "3. low": "413.6500",
+          "4. close": "423.7400",
+          "5. volume": "37596045"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-03T00:00:00+00:00",
+      "open": 418.7,
+      "high": 433.6,
+      "low": 416.0,
+      "close": 423.7,
+      "adjusted_close": null,
+      "volume": 44500733.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "418.7000",
+          "2. high": "433.6000",
+          "3. low": "416.0000",
+          "4. close": "423.7000",
+          "5. volume": "44500733"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-04T00:00:00+00:00",
+      "open": 419.84,
+      "high": 426.3499,
+      "low": 417.16,
+      "close": 418.45,
+      "adjusted_close": null,
+      "volume": 35323259.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "419.8400",
+          "2. high": "426.3499",
+          "3. low": "417.1600",
+          "4. close": "418.4500",
+          "5. volume": "35323259"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-05T00:00:00+00:00",
+      "open": 420.5,
+      "high": 424.6799,
+      "low": 388.59,
+      "close": 391.0,
+      "adjusted_close": null,
+      "volume": 63420177.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "420.5000",
+          "2. high": "424.6799",
+          "3. low": "388.5900",
+          "4. close": "391.0000",
+          "5. volume": "63420177"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-08T00:00:00+00:00",
+      "open": 396.33,
+      "high": 412.94,
+      "low": 394.72,
+      "close": 408.95,
+      "adjusted_close": null,
+      "volume": 50328834.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "396.3300",
+          "2. high": "412.9400",
+          "3. low": "394.7200",
+          "4. close": "408.9500",
+          "5. volume": "50328834"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-09T00:00:00+00:00",
+      "open": 411.03,
+      "high": 418.5,
+      "low": 384.24,
+      "close": 396.68,
+      "adjusted_close": null,
+      "volume": 59940230.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "411.0300",
+          "2. high": "418.5000",
+          "3. low": "384.2400",
+          "4. close": "396.6800",
+          "5. volume": "59940230"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-10T00:00:00+00:00",
+      "open": 391.54,
+      "high": 397.09,
+      "low": 380.15,
+      "close": 381.59,
+      "adjusted_close": null,
+      "volume": 49695583.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "391.5400",
+          "2. high": "397.0900",
+          "3. low": "380.1500",
+          "4. close": "381.5900",
+          "5. volume": "49695583"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-11T00:00:00+00:00",
+      "open": 388.28,
+      "high": 399.54,
+      "low": 380.66,
+      "close": 399.15,
+      "adjusted_close": null,
+      "volume": 45324348.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "388.2800",
+          "2. high": "399.5400",
+          "3. low": "380.6600",
+          "4. close": "399.1500",
+          "5. volume": "45324348"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-12T00:00:00+00:00",
+      "open": 399.49,
+      "high": 406.68,
+      "low": 386.76,
+      "close": 406.43,
+      "adjusted_close": null,
+      "volume": 63652286.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "399.4900",
+          "2. high": "406.6800",
+          "3. low": "386.7600",
+          "4. close": "406.4300",
+          "5. volume": "63652286"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    },
+    {
+      "date_time": "2026-06-15T00:00:00+00:00",
+      "open": 412.37,
+      "high": 416.0,
+      "low": 407.1,
+      "close": 411.15,
+      "adjusted_close": null,
+      "volume": 45620514.0,
+      "source": "Alpha Vantage",
+      "source_reliability": 0.9,
+      "is_realtime": false,
+      "is_adjusted": false,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {
+        "row": {
+          "1. open": "412.3700",
+          "2. high": "416.0000",
+          "3. low": "407.1000",
+          "4. close": "411.1500",
+          "5. volume": "45620514"
+        },
+        "symbol": "TSLA",
+        "function": "TIME_SERIES_DAILY"
+      }
+    }
+  ],
+  "filings": [
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-06-09T00:00:00+00:00",
+      "period_end": "2026-06-05T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926071970/xslF345X06/tm2617365-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-071970",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-071970",
+        "primary_document": "xslF345X06/tm2617365-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-06-08T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004726005795/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-26-005795",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-26-005795",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "SD",
+      "title": "SD filing: FORM SD",
+      "filed_at": "2026-05-29T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926068275/tm2615395d1_sd.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-068275",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "SD",
+        "accession_number": "0001104659-26-068275",
+        "primary_document": "tm2615395d1_sd.htm"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-05-15T00:00:00+00:00",
+      "period_end": "2026-05-13T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926062860/xslF345X06/tm2614845-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-062860",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-062860",
+        "primary_document": "xslF345X06/tm2614845-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-05-13T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004726004463/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-26-004463",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-26-004463",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-05-04T00:00:00+00:00",
+      "period_end": "2026-04-30T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926055079/xslF345X06/tm2613330-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-055079",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-055079",
+        "primary_document": "xslF345X06/tm2613330-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "10-K/A",
+      "title": "10-K/A filing: FORM 10-K/A",
+      "filed_at": "2026-04-30T00:00:00+00:00",
+      "period_end": "2025-12-31T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-053166",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "10-K/A",
+        "accession_number": "0001104659-26-053166",
+        "primary_document": "tm2611837d1_10ka.htm"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-04-30T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004726003863/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-26-003863",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-26-003863",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "SCHEDULE 13G",
+      "title": "SCHEDULE 13G filing: xslSCHEDULE_13G_X02/primary_doc.xml",
+      "filed_at": "2026-04-30T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000210011926001134/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0002100119-26-001134",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "SCHEDULE 13G",
+        "accession_number": "0002100119-26-001134",
+        "primary_document": "xslSCHEDULE_13G_X02/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "S-8",
+      "title": "S-8 filing: FORM S-8",
+      "filed_at": "2026-04-27T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926048779/tm2612171d1_s8.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-048779",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "S-8",
+        "accession_number": "0001104659-26-048779",
+        "primary_document": "tm2612171d1_s8.htm"
+      }
+    },
+    {
+      "filing_type": "SCHEDULE 13G/A",
+      "title": "SCHEDULE 13G/A filing: xslSCHEDULE_13G_X02/primary_doc.xml",
+      "filed_at": "2026-04-23T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926047683/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-047683",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "SCHEDULE 13G/A",
+        "accession_number": "0001104659-26-047683",
+        "primary_document": "xslSCHEDULE_13G_X02/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-04-23T00:00:00+00:00",
+      "period_end": "2026-04-21T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926047678/xslF345X06/tm2612285-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-047678",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-047678",
+        "primary_document": "xslF345X06/tm2612285-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "10-Q",
+      "title": "10-Q filing: 10-Q",
+      "filed_at": "2026-04-23T00:00:00+00:00",
+      "period_end": "2026-03-31T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001628280-26-026673",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "10-Q",
+        "accession_number": "0001628280-26-026673",
+        "primary_document": "tsla-20260331.htm"
+      }
+    },
+    {
+      "filing_type": "8-K",
+      "title": "8-K filing: 8-K",
+      "filed_at": "2026-04-22T00:00:00+00:00",
+      "period_end": "2026-04-22T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001628280-26-026551",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "8-K",
+        "accession_number": "0001628280-26-026551",
+        "primary_document": "tsla-20260422.htm"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: PRIMARY DOCUMENT",
+      "filed_at": "2026-04-02T00:00:00+00:00",
+      "period_end": "2026-03-31T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000197292826000002/xslF345X06/edgardoc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001972928-26-000002",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001972928-26-000002",
+        "primary_document": "xslF345X06/edgardoc.xml"
+      }
+    },
+    {
+      "filing_type": "8-K",
+      "title": "8-K filing: 8-K",
+      "filed_at": "2026-04-02T00:00:00+00:00",
+      "period_end": "2026-04-02T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026022956/tsla-20260402.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001628280-26-022956",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "8-K",
+        "accession_number": "0001628280-26-022956",
+        "primary_document": "tsla-20260402.htm"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-04-01T00:00:00+00:00",
+      "period_end": "2026-03-30T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926038682/xslF345X06/tm2610684-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-038682",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-038682",
+        "primary_document": "xslF345X06/tm2610684-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-03-30T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004726003078/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-26-003078",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-26-003078",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "SCHEDULE 13G/A",
+      "title": "SCHEDULE 13G/A filing: xslSCHEDULE_13G_X02/primary_doc.xml",
+      "filed_at": "2026-03-27T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000010290926002479/xslSCHEDULE_13G_X02/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0000102909-26-002479",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "SCHEDULE 13G/A",
+        "accession_number": "0000102909-26-002479",
+        "primary_document": "xslSCHEDULE_13G_X02/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-03-09T00:00:00+00:00",
+      "period_end": "2026-03-05T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926025379/xslF345X05/tm268346-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-025379",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-025379",
+        "primary_document": "xslF345X05/tm268346-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-03-06T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004726002335/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-26-002335",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-26-002335",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-02-27T00:00:00+00:00",
+      "period_end": "2026-02-25T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926021746/xslF345X05/tm267481-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-021746",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-021746",
+        "primary_document": "xslF345X05/tm267481-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-02-25T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004726001763/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-26-001763",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-26-001763",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "10-K",
+      "title": "10-K filing: 10-K",
+      "filed_at": "2026-01-29T00:00:00+00:00",
+      "period_end": "2025-12-31T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001628280-26-003952",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "10-K",
+        "accession_number": "0001628280-26-003952",
+        "primary_document": "tsla-20251231.htm"
+      }
+    },
+    {
+      "filing_type": "8-K",
+      "title": "8-K filing: 8-K",
+      "filed_at": "2026-01-28T00:00:00+00:00",
+      "period_end": "2026-01-28T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/tsla-20260128.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001628280-26-003837",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "8-K",
+        "accession_number": "0001628280-26-003837",
+        "primary_document": "tsla-20260128.htm"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: PRIMARY DOCUMENT",
+      "filed_at": "2026-01-12T00:00:00+00:00",
+      "period_end": "2026-01-08T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000197292826000001/xslF345X05/edgardoc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001972928-26-000001",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001972928-26-000001",
+        "primary_document": "xslF345X05/edgardoc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2026-01-06T00:00:00+00:00",
+      "period_end": "2026-01-02T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926001460/xslF345X05/tm261890-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-26-001460",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-26-001460",
+        "primary_document": "xslF345X05/tm261890-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2026-01-02T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000196858226000010/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001968582-26-000010",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001968582-26-000010",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "8-K",
+      "title": "8-K filing: 8-K",
+      "filed_at": "2026-01-02T00:00:00+00:00",
+      "period_end": "2026-01-02T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026000016/tsla-20260102.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001628280-26-000016",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "8-K",
+        "accession_number": "0001628280-26-000016",
+        "primary_document": "tsla-20260102.htm"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2025-12-31T00:00:00+00:00",
+      "period_end": "2025-12-30T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925125703/xslF345X05/tm2534544-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-125703",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-25-125703",
+        "primary_document": "xslF345X05/tm2534544-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2025-12-11T00:00:00+00:00",
+      "period_end": "2025-12-09T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925120387/xslF345X05/tm2533052-2_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-120387",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-25-120387",
+        "primary_document": "xslF345X05/tm2533052-2_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2025-12-09T00:00:00+00:00",
+      "period_end": "2025-12-05T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925119764/xslF345X05/tm2533052-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-119764",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-25-119764",
+        "primary_document": "xslF345X05/tm2533052-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2025-12-09T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000196858225001185/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001968582-25-001185",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001968582-25-001185",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "144",
+      "title": "144 filing: xsl144X01/primary_doc.xml",
+      "filed_at": "2025-12-08T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000195004725009970/xsl144X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001950047-25-009970",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "144",
+        "accession_number": "0001950047-25-009970",
+        "primary_document": "xsl144X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2025-11-12T00:00:00+00:00",
+      "period_end": "2025-11-10T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925110597/xslF345X05/tm2530937-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-110597",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-25-110597",
+        "primary_document": "xslF345X05/tm2530937-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "SCHEDULE 13G/A",
+      "title": "SCHEDULE 13G/A filing: xslSCHEDULE_13G_X01/primary_doc.xml",
+      "filed_at": "2025-11-10T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925109266/xslSCHEDULE_13G_X01/primary_doc.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-109266",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "SCHEDULE 13G/A",
+        "accession_number": "0001104659-25-109266",
+        "primary_document": "xslSCHEDULE_13G_X01/primary_doc.xml"
+      }
+    },
+    {
+      "filing_type": "4",
+      "title": "4 filing: OWNERSHIP DOCUMENT",
+      "filed_at": "2025-11-10T00:00:00+00:00",
+      "period_end": "2025-11-06T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925109263/xslF345X05/tm2530487-1_4seq1.xml",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-109263",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "4",
+        "accession_number": "0001104659-25-109263",
+        "primary_document": "xslF345X05/tm2530487-1_4seq1.xml"
+      }
+    },
+    {
+      "filing_type": "S-8",
+      "title": "S-8 filing: FORM S-8",
+      "filed_at": "2025-11-10T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108602/tm2530188d1_s8.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-108602",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "S-8",
+        "accession_number": "0001104659-25-108602",
+        "primary_document": "tm2530188d1_s8.htm"
+      }
+    },
+    {
+      "filing_type": "8-K",
+      "title": "8-K filing: FORM 8-K",
+      "filed_at": "2025-11-07T00:00:00+00:00",
+      "period_end": "2025-11-06T00:00:00+00:00",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-108507",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "8-K",
+        "accession_number": "0001104659-25-108507",
+        "primary_document": "tm2530590d1_8k.htm"
+      }
+    },
+    {
+      "filing_type": "DEFA14A",
+      "title": "DEFA14A filing: DEFA14A",
+      "filed_at": "2025-11-06T00:00:00+00:00",
+      "period_end": "",
+      "url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925107871/tm252289d50_defa14a.htm",
+      "summary_raw": "Raw SEC filing metadata collected. No investment conclusion generated.",
+      "source": "SEC EDGAR",
+      "source_reliability": 1.0,
+      "accession_number": "0001104659-25-107871",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "form": "DEFA14A",
+        "accession_number": "0001104659-25-107871",
+        "primary_document": "tm252289d50_defa14a.htm"
+      }
+    }
+  ],
+  "official_events": [],
+  "financial_metrics": [],
+  "news_events": [
+    {
+      "title": "SEC Appoints John Moses as Director of the Office of Investor Education and Assistance",
+      "summary_raw": "The Securities and Exchange Commission has appointed John Moses as Director of the agency’s Office of Investor Education and Assistance, which provides services and resources to help investors build their financial futures and protect against investment…",
+      "published_at": "2026-06-12T16:30:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-55-sec-appoints-john-moses-director-office-investor-education-assistance",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Proposes Rescission of Regulation NMS Rules 611 and 610(e)",
+      "summary_raw": "The Securities and Exchange Commission today proposed amendments to rescind Rules 611 and 610(e) of Regulation NMS.“After two decades of Rule 611, it is high time that the Commission review its unintended consequences that have hindered — rather than…",
+      "published_at": "2026-06-11T14:55:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-54-sec-proposes-rescission-regulation-nms-rules-611-610e",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Establishes Joint Data Standards as Required Under the Financial Data Transparency Act of 2022",
+      "summary_raw": "The U.S. Securities and Exchange Commission established joint data standards under the Financial Data Transparency Act of 2022. The final rule establishes technical standards for data submitted to certain financial regulatory agencies. Eight additional…",
+      "published_at": "2026-06-08T14:36:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-53-sec-establishes-joint-data-standards-required-under-financial-data-transparency-act-2022",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Announces New Members of Small Business Capital Formation Advisory Committee",
+      "summary_raw": "The Securities and Exchange Commission today announced five new members of the&nbsp;Small Business Capital Formation Advisory Committee. The new members were appointed to four-year terms&nbsp;and&nbsp;will join&nbsp;the&nbsp;15&nbsp;current&nbsp;…",
+      "published_at": "2026-06-04T18:39:49+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-52-sec-announces-new-members-small-business-capital-formation-advisory-committee",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Publishes Draft Strategic Plan for Public Comment",
+      "summary_raw": "The Securities and Exchange Commission today published a&nbsp;Draft Strategic Plan&nbsp;that focuses on returning the agency to the core mission set by Congress more than 90 years ago: protecting investors; maintaining fair, orderly, and efficient…",
+      "published_at": "2026-06-02T14:30:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-51-sec-publishes-draft-strategic-plan-public-comment",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Announces Four New Members of Investor Advisory Committee",
+      "summary_raw": "The Securities and Exchange Commission today announced&nbsp;four&nbsp;new members to fill vacancies on its Investor Advisory Committee.&nbsp;Three of the four new members&nbsp;will serve four-year terms,&nbsp;while the fourth new member will serve as the…",
+      "published_at": "2026-06-01T16:39:44+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-50-sec-announces-four-new-members-investor-advisory-committee",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Proposes Rescission of Climate-Related Disclosure Rules",
+      "summary_raw": "The Securities and Exchange Commission today proposed the rescission of overly burdensome and costly rules that require companies to provide certain climate-related information in their registration statements and annual reports. The Commission’s…",
+      "published_at": "2026-05-29T14:50:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-49-sec-proposes-rescission-climate-related-disclosure-rules",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Investor Advisory Committee to Host June 4 Meeting",
+      "summary_raw": "The Securities and Exchange Commission’s&nbsp;Investor Advisory Committee will hold a public meeting at the SEC Headquarters in Washington D.C. on June 4 at 10 a.m. ET to discuss private markets, passive index funds, and recommendations regarding fund…",
+      "published_at": "2026-05-27T14:59:13+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-48-sec-investor-advisory-committee-host-june-4-meeting",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC and NFA Announce Memorandum of Understanding to Further Harmonize Regulatory Coordination",
+      "summary_raw": "The Securities and Exchange Commission and National Futures Association (NFA) today announced that they have entered into a Memorandum of Understanding (MOU) to enhance their cooperation, coordination, and information sharing in areas of common…",
+      "published_at": "2026-05-21T12:51:10+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-47-sec-nfa-announce-memorandum-understanding-further-harmonize-regulatory-coordination",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Proposes Transformative Reforms to Help Public Companies Conduct Registered Offerings and Simplify Reporting Requirements",
+      "summary_raw": "The Securities and Exchange Commission today proposed amendments to its rules and forms governing registered offerings that are designed to increase efficiency, flexibility, and cost savings for public companies while maintaining robust investor…",
+      "published_at": "2026-05-19T14:55:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-46-sec-proposes-transformative-reforms-help-public-companies-conduct-registered-offerings-simplify",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Rescinds Policy Regarding Denials of Settlements in Enforcement Actions",
+      "summary_raw": "The Securities and Exchange Commission today rescinded a policy, codified in Rule 202.5(e) of its informal rules of procedures, stating that when it chooses to settle an enforcement action in which a sanction is imposed, it will not settle unless the…",
+      "published_at": "2026-05-18T16:33:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-45-sec-rescinds-policy-regarding-denials-settlements-enforcement-actions",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Charges 21 Individuals With Alleged Wide-Reaching Insider Trading Scheme",
+      "summary_raw": "The Securities and Exchange Commission today charged 21 individuals for their alleged involvement in a decade-long insider trading scheme that used information misappropriated from multiple global law firms and resulted in millions of dollars in illicit…",
+      "published_at": "2026-05-06T23:24:19+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-44-sec-charges-21-individuals-alleged-wide-reaching-insider-trading-scheme",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Divisions of Investment Management and Corporation Finance Issue Staff Guidance Supporting Retirement Plans for Small Businesses",
+      "summary_raw": "Staff in the Securities and Exchange Commission’s Divisions of Investment Management and Corporation Finance issued guidance addressing certain questions regarding the application of the federal securities laws to pooled employer plans (PEPs), which help…",
+      "published_at": "2026-05-05T20:23:55+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-43-sec-divisions-investment-management-corporation-finance-issue-staff-guidance-supporting-retirement",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Proposes Amendments to Permit Optional Semiannual Reporting by Public Companies",
+      "summary_raw": "The Securities and Exchange Commission today proposed rule and form amendments that would give public companies the option of filing semiannual reports in lieu of quarterly reports to meet their interim reporting obligations under the federal securities…",
+      "published_at": "2026-05-05T15:54:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-42-sec-proposes-amendments-permit-optional-semiannual-reporting-public-companies",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Deputy Director of Enforcement Jason Burt to Conclude His Tenure at the SEC",
+      "summary_raw": "The Securities and Exchange Commission today announced that Jason Burt, Deputy Director of the Division of Enforcement (Specialized Units), will depart the agency on May 1, 2026, after more than 22 years of public service.“Jason’s exceptional leadership…",
+      "published_at": "2026-04-30T20:30:36+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-41-deputy-director-enforcement-jason-burt-conclude-his-tenure-sec",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC and CFTC Jointly Propose Amendments to Reduce Private Fund Reporting Burdens",
+      "summary_raw": "The Securities and Exchange Commission (SEC) and the Commodity Futures Trading Commission (CFTC) jointly proposed amendments to reduce private fund reporting burdens while enabling the continued collection of necessary and appropriate information. The…",
+      "published_at": "2026-04-20T14:45:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-40-sec-cftc-jointly-propose-amendments-reduce-private-fund-reporting-burdens",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "Chairman Atkins Launches 'Material Matters' Podcast",
+      "summary_raw": "The Securities and Exchange Commission today announced the launch of Material Matters With SEC Chairman Paul Atkins, a new podcast that provides stakeholders and the investing public with exclusive interviews and insights around the agency’s policy and…",
+      "published_at": "2026-04-16T17:02:47+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-39-chairman-atkins-launches-material-matters-podcast",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Small Business Advisory Committee to Explore Ways to Encourage More IPOs",
+      "summary_raw": "The Securities and Exchange Commission’s Small Business Capital Formation Advisory Committee announced that it will hold a meeting on Tuesday, April 28, 2026 at 10:00 a.m. to explore ways to encourage more companies to go public.The meeting will be open…",
+      "published_at": "2026-04-16T15:45:04+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-38-sec-small-business-advisory-committee-explore-ways-encourage-more-ipos",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Seeks Public Comment on the Consolidated Audit Trail and Other Audit Trails and Data Sources",
+      "summary_raw": "The Securities and Exchange Commission today issued a concept release soliciting public comment in support of a comprehensive review of the Consolidated Audit Trail (CAT) and other audit trails and related data sources currently used in the regulation of…",
+      "published_at": "2026-04-16T13:55:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-37-sec-seeks-public-comment-consolidated-audit-trail-other-audit-trails-data-sources",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Approves Exemptive Order and Proposed Rule Change to Permit Customer Cross-Margining in the U.S. Treasury Market",
+      "summary_raw": "The Securities and Exchange Commission today issued a conditional exemptive order that permits customer cross-margining of cash market positions in U.S. Treasury securities cleared by a registered clearing agency and futures positions in U.S. Treasury…",
+      "published_at": "2026-04-15T19:45:51+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-36-sec-approves-exemptive-order-proposed-rule-change-permit-customer-cross-margining-us-treasury-market",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Appoints David Woodcock as Director of the Division of Enforcement",
+      "summary_raw": "The Securities and Exchange Commission today announced that David Woodcock has been appointed Director of the Division of Enforcement, effective May 4, 2026. Mr. Woodcock is currently a partner in the Dallas and Washington, D.C. offices of Gibson, Dunn…",
+      "published_at": "2026-04-08T16:20:00+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-35-sec-appoints-david-woodcock-director-division-enforcement",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Announces Enforcement Results for Fiscal Year 2025",
+      "summary_raw": "The Securities and Exchange Commission today announced enforcement results for the fiscal year that ended on September 30, 2025.Central to an effective enforcement program is determining which cases to bring and responsibly stewarding Commission…",
+      "published_at": "2026-04-07T19:48:30+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-34",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Announces Agenda and Panelists for Roundtable on Options Market Structure",
+      "summary_raw": "The Securities and Exchange Commission today announced the agenda and panelists for its April 16, 2026, roundtable on options market structure.The roundtable will be held at the SEC’s headquarters at 100 F Street, N.E., Washington, D.C., from 9 a.m. to 3…",
+      "published_at": "2026-04-02T20:44:29+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-33-sec-announces-agenda-panelists-roundtable-options-market-structure",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Highlights Financial Independence During Financial Literacy Month",
+      "summary_raw": "The Securities and Exchange Commission’s Office of Investor Education and Assistance (OIEA) today announced that as part of April’s National Financial Literacy Month it will highlight financial planning tools and resources on&nbsp;Investor.gov to…",
+      "published_at": "2026-03-31T13:52:09+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-32-sec-highlights-financial-independence-during-financial-literacy-month",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "title": "SEC Approves Amendment to NMS Plan to Further Reduce the Costs of the Consolidated Audit Trail",
+      "summary_raw": "The Securities and Exchange Commission today approved an amendment to the National Market System Plan governing the Consolidated Audit Trail (“CAT”) and provided exemptive relief from certain requirements of Rule 17a-1 under the Securities Exchange Act…",
+      "published_at": "2026-03-27T20:04:54+00:00",
+      "url": "https://www.sec.gov/newsroom/press-releases/2026-31-sec-approves-amendment-nms-plan-further-reduce-costs-consolidated-audit-trail",
+      "publisher": "Press Releases",
+      "source": "Press Releases",
+      "source_reliability": 0.6,
+      "event_type": "news",
+      "related_symbols": [
+        "TSLA"
+      ],
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {
+        "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+        "feed_title": "Press Releases",
+        "dedup": {
+          "primary_source": "Press Releases",
+          "all_sources": [
+            "Press Releases"
+          ],
+          "highest_source_reliability": 0.6,
+          "source_count": 1,
+          "merged_records": [
+            {
+              "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+              "feed_title": "Press Releases"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "macro_data": [
+    {
+      "indicator_name": "10Y Treasury Yield",
+      "value": 4.48,
+      "date": "2026-06-12T00:00:00+00:00",
+      "unit": "",
+      "source": "FRED",
+      "source_reliability": 0.95,
+      "frequency": "",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "series_id": "DGS10",
+        "observation": {
+          "realtime_start": "2026-06-15",
+          "realtime_end": "2026-06-15",
+          "date": "2026-06-12",
+          "value": "4.48"
+        }
+      }
+    },
+    {
+      "indicator_name": "2Y Treasury Yield",
+      "value": 4.09,
+      "date": "2026-06-12T00:00:00+00:00",
+      "unit": "",
+      "source": "FRED",
+      "source_reliability": 0.95,
+      "frequency": "",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "series_id": "DGS2",
+        "observation": {
+          "realtime_start": "2026-06-15",
+          "realtime_end": "2026-06-15",
+          "date": "2026-06-12",
+          "value": "4.09"
+        }
+      }
+    },
+    {
+      "indicator_name": "Federal Funds Rate",
+      "value": 3.63,
+      "date": "2026-05-01T00:00:00+00:00",
+      "unit": "",
+      "source": "FRED",
+      "source_reliability": 0.95,
+      "frequency": "",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "series_id": "FEDFUNDS",
+        "observation": {
+          "realtime_start": "2026-06-01",
+          "realtime_end": "2026-06-01",
+          "date": "2026-05-01",
+          "value": "3.63"
+        }
+      }
+    },
+    {
+      "indicator_name": "CPI",
+      "value": 333.979,
+      "date": "2026-05-01T00:00:00+00:00",
+      "unit": "",
+      "source": "FRED",
+      "source_reliability": 0.95,
+      "frequency": "",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "series_id": "CPIAUCSL",
+        "observation": {
+          "realtime_start": "2026-06-10",
+          "realtime_end": "2026-06-10",
+          "date": "2026-05-01",
+          "value": "333.979"
+        }
+      }
+    },
+    {
+      "indicator_name": "Unemployment Rate",
+      "value": 4.3,
+      "date": "2026-05-01T00:00:00+00:00",
+      "unit": "",
+      "source": "FRED",
+      "source_reliability": 0.95,
+      "frequency": "",
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {
+        "series_id": "UNRATE",
+        "observation": {
+          "realtime_start": "2026-06-05",
+          "realtime_end": "2026-06-05",
+          "date": "2026-05-01",
+          "value": "4.3"
+        }
+      }
+    }
+  ],
+  "industry_data": [],
+  "options_data": [],
+  "broker_account_data": [],
+  "research_reports": [],
+  "source_inventory": [
+    {
+      "name": "alpha_vantage",
+      "source_type": "market_data_api",
+      "enabled": true,
+      "used": true,
+      "reliability": 0.9,
+      "records_collected": 100,
+      "failed": false,
+      "failure_reason": "",
+      "is_cached": false,
+      "cache_time": "",
+      "cache_age_seconds": null,
+      "collected_at": "2026-06-16T14:34:52+00:00",
+      "raw_metadata": {}
+    },
+    {
+      "name": "sec_edgar",
+      "source_type": "official_disclosure_api",
+      "enabled": true,
+      "used": true,
+      "reliability": 1.0,
+      "records_collected": 40,
+      "failed": false,
+      "failure_reason": "",
+      "is_cached": false,
+      "cache_time": "",
+      "cache_age_seconds": null,
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {}
+    },
+    {
+      "name": "fred",
+      "source_type": "government_macro_api",
+      "enabled": true,
+      "used": true,
+      "reliability": 0.95,
+      "records_collected": 5,
+      "failed": false,
+      "failure_reason": "",
+      "is_cached": false,
+      "cache_time": "",
+      "cache_age_seconds": null,
+      "collected_at": "2026-06-16T14:34:56+00:00",
+      "raw_metadata": {}
+    },
+    {
+      "name": "rss",
+      "source_type": "user_configured_rss",
+      "enabled": true,
+      "used": true,
+      "reliability": 0.6,
+      "records_collected": 25,
+      "failed": false,
+      "failure_reason": "",
+      "is_cached": false,
+      "cache_time": "",
+      "cache_age_seconds": null,
+      "collected_at": "2026-06-16T14:35:02+00:00",
+      "raw_metadata": {}
+    }
+  ],
+  "conflicts": [],
+  "warnings": [],
+  "data_quality_report": {
+    "overall_quality": "HIGH",
+    "can_generate_analysis": true,
+    "confidence_cap": "HIGH",
+    "missing_requirements": [],
+    "warnings": [],
+    "checks": {
+      "requirements_requested": [
+        "market_data",
+        "filings",
+        "macro_data",
+        "news_events"
+      ],
+      "requirements_missing": [],
+      "has_market_data": true,
+      "has_volume": true,
+      "has_filings": true,
+      "has_macro_data": true,
+      "has_news_events": true,
+      "conflict_count": 0,
+      "duplicate_event_count": 0,
+      "low_reliability_record_count": 0,
+      "unknown_source_count": 25,
+      "sample_data_detected": false,
+      "market_data_stale": false,
+      "ibkr_enabled": false,
+      "ibkr_connected": false,
+      "broker_account_data_allowed": false,
+      "positions_pnl_allowed": false
+    }
+  }
+}

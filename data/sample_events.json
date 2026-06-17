@@ -1,0 +1,26 @@
+[
+  {
+    "source": "sample",
+    "title": "Quarterly deliveries beat consensus in sample data",
+    "summary": "Fictional sample event: stronger-than-expected vehicle deliveries may improve revenue confidence and near-term sentiment.",
+    "category": "delivery",
+    "published_at": "2026-02-12",
+    "url": "https://example.com/sample-deliveries"
+  },
+  {
+    "source": "sample",
+    "title": "Margin pressure risk after price cut discussion",
+    "summary": "Fictional sample event: price cuts can support demand but may pressure automotive gross margin.",
+    "category": "earnings",
+    "published_at": "2026-02-10",
+    "url": "https://example.com/sample-margin"
+  },
+  {
+    "source": "sample",
+    "title": "Regulatory investigation headline weighs on autonomous driving narrative",
+    "summary": "Fictional sample event: regulatory review may delay investor confidence in future autonomy revenue.",
+    "category": "regulatory",
+    "published_at": "2026-02-08",
+    "url": "https://example.com/sample-regulatory"
+  }
+]
