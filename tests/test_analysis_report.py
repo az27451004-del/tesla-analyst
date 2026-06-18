@@ -57,9 +57,17 @@ class AnalysisReportTest(unittest.TestCase):
                 filings=[
                     FilingEvent(
                         filing_type="10-Q",
-                        title="10-Q filing: Quarterly report",
+                        title="季度财报（10-Q）：Tesla, Inc. 最新披露",
+                        summary_raw="公司季度财务与经营情况披露。",
                         source="SEC EDGAR",
                         source_reliability=1.0,
+                        raw_metadata={
+                            "original_title": "10-Q filing: Quarterly report",
+                            "chinese_title": "季度财报（10-Q）：Tesla, Inc. 最新披露",
+                            "chinese_form_description": "公司季度财务与经营情况披露",
+                            "display_group": "财报披露",
+                            "sec_importance": "core",
+                        },
                     )
                 ],
                 macro_data=[
@@ -101,6 +109,24 @@ class AnalysisReportTest(unittest.TestCase):
             self.assertIn("# TSLA 一二层测试中文报告", report)
             self.assertIn("## 测试结论", report)
             self.assertIn("## 合规边界检查", report)
+            self.assertIn("中文标题", report)
+            self.assertIn("中文标题 / 原题译文", report)
+            self.assertIn("特斯拉 AI 芯片团队设定新目标", report)
+            self.assertIn("影响分含义说明", report)
+            self.assertIn("0.70 以上", report)
+            self.assertIn("0.50-0.70", report)
+            self.assertIn("影响等级", report)
+            self.assertIn("中高影响事件", report)
+            self.assertIn("具体影响分", report)
+            self.assertIn("#### 事件影响分解释", report)
+            self.assertIn("方向理由", report)
+            self.assertIn("量化证据", report)
+            self.assertIn("影响分计算", report)
+            self.assertIn("反方论点", report)
+            self.assertIn("未提供可量化数值", report)
+            self.assertIn("### SEC 披露摘要", report)
+            self.assertIn("季度财报（10-Q）", report)
+            self.assertIn("10-Q filing: Quarterly report", report)
             self.assertIn("不构成投资建议", report)
 
             analysis = json.loads(analysis_path.read_text(encoding="utf-8"))

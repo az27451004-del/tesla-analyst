@@ -23,19 +23,29 @@ DRIVERS = (
 )
 
 POSITIVE_TERMS = {
+    "above",
     "beat",
     "beats",
     "record",
+    "raise",
+    "raises",
     "upgrade",
     "approval",
     "growth",
     "profit",
     "profitable",
+    "strength",
     "strong demand",
     "cash flow",
 }
 
 NEGATIVE_TERMS = {
+    "concern",
+    "concerns",
+    "falls",
+    "fires back",
+    "growth slowing",
+    "misleading",
     "miss",
     "misses",
     "downgrade",
@@ -43,8 +53,14 @@ NEGATIVE_TERMS = {
     "investigation",
     "lawsuit",
     "price cut",
+    "raises concerns",
+    "scared",
+    "slowing",
+    "support measures withdrawn",
     "weak demand",
     "delay",
     "loss",
+    "support withdrawn",
     "tariff",
+    "withdrawn",
 }

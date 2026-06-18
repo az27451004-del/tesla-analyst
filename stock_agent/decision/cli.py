@@ -9,6 +9,7 @@ from typing import Any
 
 from stock_agent.analysis.models import AnalysisResult, EventSignal, MarketState, ScenarioForecast
 from stock_agent.data_coverage import DataCoverageReport, DataGap, DataSourceRoadmapItem
+from stock_agent.reporting import write_pdf_for_markdown
 
 from . import LONG_TERM_FUNDAMENTAL, build_decision_plan
 from .report import build_decision_markdown
@@ -33,6 +34,12 @@ def main(argv: list[str] | None = None) -> int:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(content, encoding="utf-8")
         print(f"Decision plan written to {output}")
+        if args.format == "markdown":
+            pdf_path = write_pdf_for_markdown(output)
+            if pdf_path:
+                print(f"PDF report written to {pdf_path}")
+            else:
+                print("PDF report was not generated because ReportLab is unavailable.")
     else:
         print(content)
     return 0
@@ -59,7 +66,12 @@ def build_decision_output(
     analysis = analysis_result_from_dict(payload)
     plan = build_decision_plan(analysis, investor_type, horizon)
     if output_format == "markdown":
-        content = build_decision_markdown(plan, symbol=analysis.symbol, analysis_generated_at=analysis.generated_at)
+        content = build_decision_markdown(
+            plan,
+            symbol=analysis.symbol,
+            analysis_generated_at=analysis.generated_at,
+            driver_scores=analysis.driver_scores,
+        )
     else:
         content = json.dumps(plan.to_dict(), ensure_ascii=False, indent=2)
     return content, analysis, plan
@@ -121,6 +133,10 @@ def _event_signal_from_dict(payload: Any) -> EventSignal:
         surprise_level=str(item.get("surprise_level") or "未知"),
         source_reliability=float(item.get("source_reliability") or 0.0),
         evidence=str(item.get("evidence") or ""),
+        impact_reason=str(item.get("impact_reason") or ""),
+        counterpoint=str(item.get("counterpoint") or ""),
+        quantitative_evidence=tuple(str(value) for value in _sequence(item.get("quantitative_evidence"))),
+        score_breakdown=tuple(str(value) for value in _sequence(item.get("score_breakdown"))),
     )
 
 

@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .collection import CollectionRequest, collect_data
 from .collection.inspection import build_collection_audit_markdown
+from .reporting import write_pdf_for_markdown
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -28,6 +29,7 @@ def main(argv: list[str] | None = None) -> int:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(report, encoding="utf-8")
         print(f"Collection audit written to {output}")
+        _print_pdf_output(output)
         return 0
 
     if args.command == "decide":
@@ -43,6 +45,8 @@ def main(argv: list[str] | None = None) -> int:
         output.parent.mkdir(parents=True, exist_ok=True)
         output.write_text(content, encoding="utf-8")
         print(f"Decision plan written to {output}")
+        if args.format == "markdown":
+            _print_pdf_output(output)
         return 0
 
     if args.command == "layer12-report":
@@ -56,6 +60,20 @@ def main(argv: list[str] | None = None) -> int:
         )
         print(f"Layer 1/2 report written to {args.report_output}")
         print(f"Layer 1/2 status: {validation['status']}")
+        return 0
+
+    if args.command == "layer123-report":
+        from .decision.layer123_report import write_layer123_test_outputs
+
+        validation = write_layer123_test_outputs(
+            collection_input=Path(args.collection_input),
+            analysis_input=Path(args.analysis_input),
+            output_dir=Path(args.output_dir),
+            report_output=Path(args.report_output) if args.report_output else None,
+            validation_output=Path(args.validation_output) if args.validation_output else None,
+        )
+        print(f"Layer 1/2/3 report written to {validation['output_files']['report_markdown']}")
+        print(f"Layer 1/2/3 status: {validation['status']}")
         return 0
 
     parser.print_help()
@@ -110,6 +128,16 @@ def build_parser() -> argparse.ArgumentParser:
     layer12.add_argument("--analysis-output", required=True, help="AnalysisResult JSON output path")
     layer12.add_argument("--report-output", required=True, help="Chinese Markdown report output path")
     layer12.add_argument("--validation-output", help="Optional validation JSON output path")
+
+    layer123 = subparsers.add_parser(
+        "layer123-report",
+        description="Generate six third-layer plans and a Chinese layer 1/2/3 test report",
+    )
+    layer123.add_argument("--collection-input", required=True, help="CollectionResult JSON input path")
+    layer123.add_argument("--analysis-input", required=True, help="AnalysisResult JSON input path")
+    layer123.add_argument("--output-dir", required=True, help="Directory for third-layer JSON/Markdown outputs")
+    layer123.add_argument("--report-output", help="Chinese Markdown report output path")
+    layer123.add_argument("--validation-output", help="Optional validation JSON output path")
     return parser
 
 
@@ -176,6 +204,14 @@ def _parse_rss_aliases(values: list[str]) -> dict[str, list[str]]:
             if cleaned and cleaned not in aliases[symbol]:
                 aliases[symbol].append(cleaned)
     return aliases
+
+
+def _print_pdf_output(markdown_path: Path) -> None:
+    pdf_path = write_pdf_for_markdown(markdown_path)
+    if pdf_path:
+        print(f"PDF report written to {pdf_path}")
+    else:
+        print("PDF report was not generated because ReportLab is unavailable.")
 
 
 if __name__ == "__main__":

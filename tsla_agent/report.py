@@ -3,6 +3,8 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
+from stock_agent.reporting import write_pdf_for_markdown
+
 from tsla_agent.models import ForecastResult, MarketSummary, now_iso
 
 
@@ -210,6 +212,7 @@ def build_markdown_report(
 def write_report(content: str, path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
+    write_pdf_for_markdown(path)
     return path
 
 

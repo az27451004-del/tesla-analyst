@@ -7,6 +7,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
+from stock_agent.reporting.text import join_readable_items
+from stock_agent.reporting.pdf import write_pdf_for_markdown
+
+from .chinese_titles import event_title_with_translation
 from .pipeline import analyze_collection
 
 
@@ -43,6 +47,10 @@ def write_layer12_test_outputs(
         output_files=output_files,
     )
     report_output.write_text(report, encoding="utf-8")
+    pdf_output = write_pdf_for_markdown(report_output)
+    if pdf_output:
+        output_files["report_pdf"] = str(pdf_output)
+        validation["output_files"] = dict(output_files)
 
     if validation_output:
         validation_output.parent.mkdir(parents=True, exist_ok=True)
@@ -188,6 +196,7 @@ def build_layer12_test_report(
     lines.append("")
 
     _append_top_events(lines, events)
+    _append_sec_summary(lines, _list(collection.get("filings")))
     _append_driver_scores(lines, _dict(analysis.get("driver_scores")))
     _append_scenarios(lines, scenarios)
     _append_validation(lines, layer1_checks, layer2_checks)
@@ -214,15 +223,73 @@ def _append_top_events(lines: list[str], events: list[Any]) -> None:
         lines.append("- 未生成事件信号。")
         lines.append("")
         return
-    lines.append("| 排名 | 驱动因子 | 方向 | 影响分 | 来源可信度 | 标题 |")
-    lines.append("|---:|---|---|---:|---:|---|")
+    _append_impact_score_meaning(lines, heading="#### 影响分含义说明")
+    lines.append("| 排名 | 驱动因子 | 方向 | 影响等级 | 来源可信度 | 中文标题 / 原题译文 |")
+    lines.append("|---:|---|---|---|---:|---|")
     for index, event in enumerate(events[:10], 1):
         item = _dict(event)
+        title = _text(item.get("title"))
         lines.append(
             f"| {index} | {_cell(item.get('driver'))} | {_cell(item.get('direction'))} | "
-            f"{_num(item.get('impact_score'), 3)} | {_num(item.get('source_reliability'), 3)} | {_cell(item.get('title'))} |"
+            f"{_cell(_impact_level(item.get('impact_score')))} | {_num(item.get('source_reliability'), 3)} | "
+            f"{_cell(event_title_with_translation(title, item.get('driver')))} |"
         )
     lines.append("")
+    lines.append("#### 事件影响分解释")
+    for index, event in enumerate(events[:10], 1):
+        item = _dict(event)
+        title = _text(item.get("title"))
+        lines.append(f"**{index}. {event_title_with_translation(title, item.get('driver'))}**")
+        lines.append(f"- 英文原题：{_text(title)}")
+        lines.append(f"- 影响等级：{_impact_level(item.get('impact_score'))}；具体影响分：{_num(item.get('impact_score'), 3)}")
+        lines.append(f"- 方向理由：{_text(item.get('impact_reason'), '未生成方向解释。')}")
+        lines.append(f"- 量化证据：{_join(_list(item.get('quantitative_evidence')))}")
+        lines.append(f"- 影响分计算：{_join(_list(item.get('score_breakdown')))}")
+        lines.append(f"- 反方论点：{_text(item.get('counterpoint'), '需要结合后续数据复核。')}")
+    lines.append("")
+
+
+def _append_impact_score_meaning(lines: list[str], heading: str) -> None:
+    lines.append(heading)
+    lines.append("- `0.70 以上`：高影响事件，优先阅读和验证。")
+    lines.append("- `0.50-0.70`：中高影响事件，可能影响某个画像或因子。")
+    lines.append("- `0.30-0.50`：中等影响，更多是背景信息。")
+    lines.append("- `0.30 以下`：低影响或噪音，通常不应单独决策。")
+    lines.append("- 影响分表示事件重要程度，不等于上涨概率、下跌概率或预期涨跌幅；必须与方向、驱动因子和量化证据一起看。")
+    lines.append("")
+
+
+def _append_sec_summary(lines: list[str], filings: list[Any]) -> None:
+    lines.append("### SEC 披露摘要")
+    if not filings:
+        lines.append("- 未采集到 SEC 披露。")
+        lines.append("")
+        return
+    groups = {
+        "重大披露": [],
+        "财报披露": [],
+        "持股/登记类披露": [],
+        "其他披露": [],
+    }
+    for filing in filings:
+        item = _dict(filing)
+        metadata = _dict(item.get("raw_metadata"))
+        group = str(metadata.get("display_group") or "其他披露")
+        groups.setdefault(group, []).append(item)
+    for group_name in ("重大披露", "财报披露", "持股/登记类披露", "其他披露"):
+        items = groups.get(group_name, [])
+        if not items:
+            continue
+        lines.append(f"#### {group_name}")
+        lines.append("| 日期 | 中文标题 | 表单说明 | 英文原题 |")
+        lines.append("|---|---|---|---|")
+        for item in items[:5]:
+            metadata = _dict(item.get("raw_metadata"))
+            lines.append(
+                f"| {_cell(item.get('filed_at'))} | {_cell(metadata.get('chinese_title') or item.get('title'))} | "
+                f"{_cell(metadata.get('chinese_form_description'))} | {_cell(metadata.get('original_title'))} |"
+            )
+        lines.append("")
 
 
 def _append_driver_scores(lines: list[str], scores: dict[str, Any]) -> None:
@@ -234,7 +301,7 @@ def _append_driver_scores(lines: list[str], scores: dict[str, Any]) -> None:
     lines.append("| 驱动因子 | 分数 |")
     lines.append("|---|---:|")
     for driver, score in scores.items():
-        lines.append(f"| {_cell(driver)} | {_num(score, 3)} |")
+        lines.append(f"| {_cell(driver)} | {_cell(_fmt_factor_score(score))} |")
     lines.append("")
 
 
@@ -348,8 +415,7 @@ def _text(value: Any, default: str = "无") -> str:
 
 
 def _join(value: Any) -> str:
-    items = _list(value)
-    return "、".join(str(item) for item in items) if items else "无"
+    return join_readable_items(value)
 
 
 def _num(value: Any, digits: int = 2) -> str:
@@ -359,6 +425,33 @@ def _num(value: Any, digits: int = 2) -> str:
         return f"{float(value):.{digits}f}"
     except (TypeError, ValueError):
         return str(value)
+
+
+def _fmt_factor_score(value: Any) -> str:
+    if value is None or value == "":
+        return "无"
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        return str(value)
+    text = f"{numeric:.3f}"
+    if abs(numeric) < 0.0005:
+        return f"{text}（当前无可评分证据）"
+    return text
+
+
+def _impact_level(value: Any) -> str:
+    try:
+        numeric = float(value)
+    except (TypeError, ValueError):
+        return "无"
+    if numeric >= 0.70:
+        return "高影响事件"
+    if numeric >= 0.50:
+        return "中高影响事件"
+    if numeric >= 0.30:
+        return "中等影响事件"
+    return "低影响或噪音"
 
 
 def _cell(value: Any) -> str:

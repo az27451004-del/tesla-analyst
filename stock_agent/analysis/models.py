@@ -39,6 +39,10 @@ class EventSignal:
     surprise_level: str = "未知"
     source_reliability: float = 0.0
     evidence: str = ""
+    impact_reason: str = ""
+    counterpoint: str = ""
+    quantitative_evidence: tuple[str, ...] = field(default_factory=tuple)
+    score_breakdown: tuple[str, ...] = field(default_factory=tuple)
 
 
 @dataclass(frozen=True)

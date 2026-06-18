@@ -6,6 +6,7 @@ from unittest.mock import patch
 
 from stock_agent.collection import CollectionRequest, collect_data
 from stock_agent.collection.models import WarningRecord, now_iso
+from stock_agent.collection.sources.sec_edgar import SECEdgarSource
 from stock_agent.collection.sources.base import SourceOutput
 
 
@@ -205,6 +206,31 @@ class CollectionQualityTest(unittest.TestCase):
         peer = next(event for event in result.news_events if event.title.startswith("BYD price cuts"))
         self.assertFalse(peer.raw_metadata["direct_symbol_match"])
         self.assertEqual(peer.raw_metadata["requested_symbol_relevance"], 0.81)
+
+    def test_sec_filings_get_chinese_titles_and_metadata(self):
+        payload = {
+            "filings": {
+                "recent": {
+                    "form": ["10-Q", "8-K", "4"],
+                    "filingDate": ["2026-06-15", "2026-06-14", "2026-06-13"],
+                    "reportDate": ["2026-03-31", "", ""],
+                    "accessionNumber": ["0001", "0002", "0003"],
+                    "primaryDocument": ["tsla-10q.htm", "tsla-8k.htm", "form4.xml"],
+                    "primaryDocDescription": ["FORM 10-Q", "FORM 8-K", "OWNERSHIP DOCUMENT"],
+                }
+            }
+        }
+
+        filings = SECEdgarSource()._parse_filings(payload, "0001318605", 3, now_iso(), "Tesla, Inc.")
+
+        self.assertIn("季度财报（10-Q）", filings[0].title)
+        self.assertEqual(filings[0].raw_metadata["display_group"], "财报披露")
+        self.assertEqual(filings[0].raw_metadata["sec_importance"], "core")
+        self.assertIn("10-Q filing: FORM 10-Q", filings[0].raw_metadata["original_title"])
+        self.assertIn("重大事项报告（8-K）", filings[1].title)
+        self.assertEqual(filings[1].raw_metadata["display_group"], "重大披露")
+        self.assertIn("内部人持股变动（Form 4）", filings[2].title)
+        self.assertEqual(filings[2].raw_metadata["display_group"], "持股/登记类披露")
 
 
 if __name__ == "__main__":

@@ -94,6 +94,14 @@ class DecisionLayerTest(unittest.TestCase):
         self.assertIn("成交量", messages)
         self.assertIn("期权", messages)
 
+    def test_event_factors_use_short_references_without_original_titles(self):
+        plan = build_decision_plan(_analysis(), LONG_TERM_FUNDAMENTAL)
+        combined = "\n".join(list(plan.supporting_factors) + list(plan.risk_factors))
+
+        self.assertIn("事件#", combined)
+        self.assertIn("监管调查或召回风险", combined)
+        self.assertNotIn("英文原题：Tesla faces regulatory investigation and recall", combined)
+
 
 if __name__ == "__main__":
     unittest.main()

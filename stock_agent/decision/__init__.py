@@ -5,6 +5,7 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass, field, is_dataclass
 from typing import Any
 
+from stock_agent.analysis.chinese_titles import chinese_event_title
 from stock_agent.data_coverage import ProfileCoverageReport, confidence_min, evaluate_profile_coverage
 from stock_agent.analysis import (
     DRIVER_COMPETITION,
@@ -220,9 +221,9 @@ def _supporting_factors(analysis: AnalysisResult, profile: InvestorProfile) -> l
         score = analysis.driver_scores.get(driver, 0.0)
         if score > 0:
             factors.append(f"{driver} 因子为正，画像权重 {profile.weights[driver]:.0%}，当前得分 {score:.2f}。")
-    for event in analysis.event_signals[:3]:
+    for index, event in enumerate(analysis.event_signals[:3], 1):
         if event.direction == "正面":
-            factors.append(f"正面事件：{event.title}，来源 {event.source or '未知'}，影响分 {event.impact_score:.2f}。")
+            factors.append(f"正面事件：{_event_short_reference(event, index)}。")
     if not factors:
         factors.append("当前没有足够强的正面证据，暂以观察和条件触发为主。")
     return factors[:4]
@@ -234,15 +235,52 @@ def _risk_factors(analysis: AnalysisResult, profile: InvestorProfile) -> list[st
         score = analysis.driver_scores.get(driver, 0.0)
         if score < 0:
             risks.append(f"{driver} 因子为负，画像权重 {profile.weights[driver]:.0%}，当前得分 {score:.2f}。")
-    for event in analysis.event_signals[:5]:
-        if event.direction == "负面":
-            risks.append(f"负面事件：{event.title}，来源 {event.source or '未知'}，影响分 {event.impact_score:.2f}。")
+    for index, event in enumerate(analysis.event_signals[:5], 1):
+        if event.direction == "负面" or _is_risk_event(event):
+            label = "负面事件" if event.direction == "负面" else "风险事件"
+            risks.append(f"{label}：{_event_short_reference(event, index)}。")
     risks.extend(analysis.quality_downgrades[:2])
     profile_coverage = evaluate_profile_coverage(analysis.data_coverage, profile.investor_type)
     risks.extend(profile_coverage.warnings[:2])
     if not risks:
         risks.append("主要风险来自新信息不足、估值波动和突发宏观/监管变化。")
     return risks[:5]
+
+
+def _is_risk_event(event: Any) -> bool:
+    text = f"{getattr(event, 'title', '')} {getattr(event, 'driver', '')} {getattr(event, 'category', '')}".lower()
+    risk_terms = (
+        "regulatory",
+        "investigation",
+        "recall",
+        "lawsuit",
+        "probe",
+        "nhtsa",
+        "ban",
+        "tariff",
+        "监管",
+        "召回",
+        "调查",
+        "诉讼",
+    )
+    return any(term in text for term in risk_terms)
+
+
+def _event_short_reference(event: Any, index: int) -> str:
+    title = str(getattr(event, "title", "") or "")
+    driver = getattr(event, "driver", "")
+    chinese = chinese_event_title(title, driver)
+    short_title = _compact_event_title(chinese)
+    source = str(getattr(event, "source", "") or "未知")
+    impact = float(getattr(event, "impact_score", 0.0) or 0.0)
+    return f"事件#{index} {short_title}（{source}，影响分 {impact:.2f}）"
+
+
+def _compact_event_title(title: str) -> str:
+    text = title.split("（", 1)[0].strip()
+    text = text.replace("：特斯拉", "").replace("：相关公司", "")
+    text = text.replace("相关消息", "").replace("相关进展", "进展")
+    return text[:28] if len(text) > 28 else text
 
 
 def _entry_plan(analysis: AnalysisResult, profile: InvestorProfile, score: float) -> list[str]:
