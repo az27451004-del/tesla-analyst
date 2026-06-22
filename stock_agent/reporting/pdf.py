@@ -218,7 +218,6 @@ def _font_candidates() -> list[Path]:
     for path in discovered:
         if path not in candidates:
             candidates.append(path)
-    candidates.append(Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
     return candidates
 
 
