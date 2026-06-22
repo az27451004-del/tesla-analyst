@@ -32,6 +32,7 @@ class EventSignal:
     title: str
     source: str = ""
     published_at: str = ""
+    event_scope: str = "公司级事件"
     category: str = "news"
     driver: str = DRIVER_TECHNICAL
     direction: str = "中性"

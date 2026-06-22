@@ -111,6 +111,7 @@ class AnalysisReportTest(unittest.TestCase):
             self.assertIn("## 合规边界检查", report)
             self.assertIn("中文标题", report)
             self.assertIn("中文标题 / 原题译文", report)
+            self.assertIn("事件层级", report)
             self.assertIn("发布时间", report)
             self.assertIn("特斯拉 AI 芯片团队设定新目标", report)
             self.assertIn("影响分含义说明", report)

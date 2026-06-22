@@ -102,6 +102,7 @@ def _event_signal(event: Any) -> EventSignal:
         title=title,
         source=str(field_value(event, "source", "publisher", "institution", default="") or ""),
         published_at=_event_timestamp(event, raw_metadata),
+        event_scope=_event_scope(raw_metadata, relevance),
         category=category or "news",
         driver=driver,
         direction=direction,
@@ -127,6 +128,22 @@ def _event_timestamp(event: Any, raw_metadata: Any) -> str:
             if value not in (None, ""):
                 return str(value)
     return ""
+
+
+def _event_scope(raw_metadata: Any, relevance: float) -> str:
+    if isinstance(raw_metadata, dict):
+        match_type = str(raw_metadata.get("match_type") or "").strip().lower()
+        if match_type == "market_theme" or raw_metadata.get("market_wide_event"):
+            return "市场级事件"
+        if match_type == "indirect_related":
+            return "行业相关事件"
+        if match_type == "direct_symbol":
+            return "公司级事件"
+    if relevance < 0.55:
+        return "市场级事件"
+    if relevance < 0.85:
+        return "行业相关事件"
+    return "公司级事件"
 
 
 def _score_breakdown(
