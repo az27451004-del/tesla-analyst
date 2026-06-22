@@ -2,6 +2,12 @@ name: Tesla Pre-Open Analysis Email
 
 on:
   workflow_dispatch:
+    inputs:
+      test_mode:
+        description: "手动运行时跳过纽约发送窗口并立即执行"
+        required: false
+        default: true
+        type: boolean
   schedule:
     - cron: "27 11 * * 1-5"
     - cron: "27 12 * * 1-5"
@@ -25,6 +31,7 @@ jobs:
       SMTP_FROM: ${{ secrets.SMTP_FROM }}
       SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS }}
       ENFORCE_DELIVERY_WINDOW: "true"
+      FORCE_RUN: ${{ github.event_name == 'workflow_dispatch' && (inputs.test_mode && 'true' || 'false') || 'false' }}
       DELIVERY_WINDOW_START_NY: "07:20"
       DELIVERY_WINDOW_END_NY: "07:35"
       AUTOMATION_OUTPUT_ROOT: ${{ github.workspace }}/automation_output
@@ -48,7 +55,7 @@ jobs:
       - name: Run automation unit test
         run: python -m unittest tests.test_tesla_pre_open_email
 
-      - name: Run TSLA pre-open automation
+      - name: Run TSLA pre-open automation (manual test bypasses window)
         run: python -m stock_agent.automation.tesla_pre_open_email
 
       - name: Upload automation outputs
