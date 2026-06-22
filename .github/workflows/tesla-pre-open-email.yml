@@ -53,6 +53,8 @@ jobs:
           python -m pip install reportlab
 
       - name: Run automation unit test
+        env:
+          FORCE_RUN: "false"
         run: python -m unittest tests.test_tesla_pre_open_email
 
       - name: Run TSLA pre-open automation (manual test bypasses window)
