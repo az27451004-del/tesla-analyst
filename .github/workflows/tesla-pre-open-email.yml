@@ -48,7 +48,7 @@ jobs:
       - name: Install PDF dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y poppler-utils
+          sudo apt-get install -y poppler-utils fonts-noto-cjk
           python -m pip install --upgrade pip
           python -m pip install reportlab
 
