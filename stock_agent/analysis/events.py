@@ -101,6 +101,7 @@ def _event_signal(event: Any) -> EventSignal:
     return EventSignal(
         title=title,
         source=str(field_value(event, "source", "publisher", "institution", default="") or ""),
+        published_at=_event_timestamp(event, raw_metadata),
         category=category or "news",
         driver=driver,
         direction=direction,
@@ -114,6 +115,18 @@ def _event_signal(event: Any) -> EventSignal:
         quantitative_evidence=quantitative_evidence,
         score_breakdown=score_breakdown,
     )
+
+
+def _event_timestamp(event: Any, raw_metadata: Any) -> str:
+    direct = field_value(event, "published_at", "filed_at", "date", "date_time", "collected_at", default="")
+    if direct not in (None, ""):
+        return str(direct)
+    if isinstance(raw_metadata, dict):
+        for key in ("published_at", "filed_at", "date", "date_time", "collected_at"):
+            value = raw_metadata.get(key)
+            if value not in (None, ""):
+                return str(value)
+    return ""
 
 
 def _score_breakdown(

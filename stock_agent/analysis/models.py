@@ -31,6 +31,7 @@ class MarketState:
 class EventSignal:
     title: str
     source: str = ""
+    published_at: str = ""
     category: str = "news"
     driver: str = DRIVER_TECHNICAL
     direction: str = "中性"

@@ -268,13 +268,13 @@ def _append_important_events(lines: list[str], events: list[Any]) -> None:
         lines.append("")
         return
     _append_impact_score_meaning(lines)
-    lines.append("| 排名 | 驱动因子 | 方向 | 影响等级 | 来源 | 中文标题 / 原题译文 |")
-    lines.append("|---:|---|---|---|---|---|")
+    lines.append("| 排名 | 发布时间 | 驱动因子 | 方向 | 影响等级 | 来源 | 中文标题 / 原题译文 |")
+    lines.append("|---:|---|---|---|---|---|---|")
     for index, event in enumerate(events[:10], 1):
         item = _dict(event)
         title = _text(item.get("title"))
         lines.append(
-            f"| {index} | {_cell(item.get('driver'))} | {_cell(item.get('direction'))} | "
+            f"| {index} | {_cell(_event_display_time(item))} | {_cell(item.get('driver'))} | {_cell(item.get('direction'))} | "
             f"{_cell(_impact_level(item.get('impact_score')))} | {_cell(item.get('source'))} | "
             f"{_cell(event_title_with_translation(title, item.get('driver')))} |"
         )
@@ -284,6 +284,7 @@ def _append_important_events(lines: list[str], events: list[Any]) -> None:
         item = _dict(event)
         title = _text(item.get("title"))
         lines.append(f"**{index}. {event_title_with_translation(title, item.get('driver'))}**")
+        lines.append(f"- 发布时间：{_text(_event_display_time(item), '未提供')}")
         lines.append(f"- 英文原题：{_text(title)}")
         lines.append(f"- 影响等级：{_impact_level(item.get('impact_score'))}；具体影响分：{_num(item.get('impact_score'), 3)}")
         lines.append(f"- 方向理由：{_text(item.get('impact_reason'), '未生成方向解释。')}")
@@ -443,6 +444,28 @@ def _list(value: Any) -> list[Any]:
     if isinstance(value, tuple):
         return list(value)
     return []
+
+
+def _event_display_time(event: dict[str, Any]) -> str:
+    for key in ("published_at", "filed_at", "date", "date_time", "collected_at"):
+        value = event.get(key)
+        if value not in (None, ""):
+            return _format_report_time(value)
+    return ""
+
+
+def _format_report_time(value: Any) -> str:
+    text = str(value).strip()
+    if not text:
+        return ""
+    normalized = text.replace("Z", "+00:00")
+    try:
+        parsed = datetime.fromisoformat(normalized)
+    except ValueError:
+        return text
+    if parsed.tzinfo is None:
+        return parsed.strftime("%Y-%m-%d %H:%M")
+    return parsed.strftime("%Y-%m-%d %H:%M %Z").strip()
 
 
 def _text(value: Any, default: str = "无") -> str:
