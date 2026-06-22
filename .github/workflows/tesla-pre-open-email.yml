@@ -1,0 +1,60 @@
+name: Tesla Pre-Open Analysis Email
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "27 11 * * 1-5"
+    - cron: "27 12 * * 1-5"
+
+jobs:
+  send-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+
+    env:
+      ALPHAVANTAGE_API_KEY: ${{ secrets.ALPHAVANTAGE_API_KEY }}
+      FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT }}
+      NEWS_RSS_URLS: ${{ secrets.NEWS_RSS_URLS }}
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
+      SMTP_PORT: ${{ secrets.SMTP_PORT }}
+      SMTP_USER: ${{ secrets.SMTP_USER }}
+      SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+      SMTP_FROM: ${{ secrets.SMTP_FROM }}
+      SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS }}
+      ENFORCE_DELIVERY_WINDOW: "true"
+      DELIVERY_WINDOW_START_NY: "07:20"
+      DELIVERY_WINDOW_END_NY: "07:35"
+      AUTOMATION_OUTPUT_ROOT: ${{ github.workspace }}/automation_output
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PDF dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          python -m pip install --upgrade pip
+          python -m pip install reportlab
+
+      - name: Run automation unit test
+        run: python -m unittest tests.test_tesla_pre_open_email
+
+      - name: Run TSLA pre-open automation
+        run: python -m stock_agent.automation.tesla_pre_open_email
+
+      - name: Upload automation outputs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tesla-pre-open-analysis-output
+          path: automation_output/
+          if-no-files-found: warn
