@@ -47,7 +47,11 @@ class TeslaPreOpenEmailTest(unittest.TestCase):
         self.assertIn("发送失败说明", body)
 
     def test_delivery_window_allows_target_time(self):
-        with patch.dict(os.environ, {"ENFORCE_DELIVERY_WINDOW": "true"}, clear=False):
+        with patch.dict(
+            os.environ,
+            {"ENFORCE_DELIVERY_WINDOW": "true", "FORCE_RUN": "false"},
+            clear=False,
+        ):
             status = determine_delivery_window(datetime(2026, 6, 18, 7, 27, tzinfo=NEW_YORK_TZ))
         self.assertTrue(status.should_run)
         self.assertTrue(status.enforced)
@@ -60,7 +64,11 @@ class TeslaPreOpenEmailTest(unittest.TestCase):
         self.assertTrue(status.enforced)
 
     def test_delivery_window_skips_outside_window(self):
-        with patch.dict(os.environ, {"ENFORCE_DELIVERY_WINDOW": "true"}, clear=False):
+        with patch.dict(
+            os.environ,
+            {"ENFORCE_DELIVERY_WINDOW": "true", "FORCE_RUN": "false"},
+            clear=False,
+        ):
             status = determine_delivery_window(datetime(2026, 6, 18, 8, 27, tzinfo=NEW_YORK_TZ))
         self.assertFalse(status.should_run)
         self.assertIn("不在发送窗口", status.reason)
