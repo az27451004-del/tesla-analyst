@@ -183,22 +183,12 @@ def _render_with_reportlab(markdown_path: Path, pdf_path: Path) -> None:
 
 
 def _register_font(pdfmetrics: Any, TTFont: Any) -> str:
-    candidates = [
-        Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
-        Path("/System/Library/Fonts/PingFang.ttc"),
-        Path("/System/Library/Fonts/Supplemental/Songti.ttc"),
-        Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
-        Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
-        Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
-        Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
-    ]
+    candidates = _font_candidates()
     for font_path in candidates:
-        if font_path.exists():
-            try:
-                pdfmetrics.registerFont(TTFont("ReportFont", str(font_path)))
-                return "ReportFont"
-            except Exception:  # noqa: BLE001
-                continue
+        if not font_path.exists():
+            continue
+        if _try_register_font(pdfmetrics, TTFont, font_path):
+            return "ReportFont"
     try:
         from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 
@@ -207,6 +197,82 @@ def _register_font(pdfmetrics: Any, TTFont: Any) -> str:
     except Exception:  # noqa: BLE001
         pass
     return "Helvetica"
+
+
+def _font_candidates() -> list[Path]:
+    candidates = [
+        Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
+        Path("/System/Library/Fonts/PingFang.ttc"),
+        Path("/System/Library/Fonts/Supplemental/PingFang.ttc"),
+        Path("/System/Library/Fonts/Supplemental/Songti.ttc"),
+        Path("/System/Library/Fonts/Hiragino Sans GB.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Bold.ttc"),
+        Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
+        Path("/usr/share/fonts/truetype/arphic/ukai.ttc"),
+        Path("/usr/share/fonts/truetype/arphic/uming.ttc"),
+    ]
+    discovered = _discover_cjk_font_paths()
+    for path in discovered:
+        if path not in candidates:
+            candidates.append(path)
+    candidates.append(Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"))
+    return candidates
+
+
+def _discover_cjk_font_paths() -> list[Path]:
+    families = [
+        "Noto Sans CJK SC",
+        "Noto Serif CJK SC",
+        "Noto Sans CJK TC",
+        "Source Han Sans SC",
+        "Source Han Serif SC",
+        "WenQuanYi Zen Hei",
+        "AR PL UKai CN",
+        "AR PL UMing CN",
+        "PingFang SC",
+        "Songti SC",
+        "SimHei",
+        "Microsoft YaHei",
+    ]
+    paths: list[Path] = []
+    for family in families:
+        try:
+            result = subprocess.run(
+                ["fc-match", "-f", "%{file}\n", family],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+                check=False,
+            )
+        except FileNotFoundError:
+            break
+        path_text = result.stdout.strip()
+        if not path_text:
+            continue
+        path = Path(path_text)
+        if path.exists() and path not in paths:
+            paths.append(path)
+    return paths
+
+
+def _try_register_font(pdfmetrics: Any, TTFont: Any, font_path: Path) -> bool:
+    suffix = font_path.suffix.lower()
+    if suffix == ".ttc":
+        for subfont_index in range(10):
+            try:
+                pdfmetrics.registerFont(TTFont("ReportFont", str(font_path), subfontIndex=subfont_index))
+                return True
+            except Exception:  # noqa: BLE001
+                continue
+        return False
+    try:
+        pdfmetrics.registerFont(TTFont("ReportFont", str(font_path)))
+        return True
+    except Exception:  # noqa: BLE001
+        return False
 
 
 def _escape_inline(text: str) -> str:
