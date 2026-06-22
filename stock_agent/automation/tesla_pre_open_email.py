@@ -34,6 +34,9 @@ DEFAULT_MARKET_TOPIC_QUERIES = (
     "\"Strait of Hormuz\" OR Hormuz OR Iran talks OR Middle East oil supply",
     "tariff OR sanctions OR export controls OR trade war",
     "\"White House\" policy speech OR U.S. president speech OR election policy",
+    "\"U.S.-China\" OR \"US-China\" OR \"China-US\" OR China trade talks OR U.S. China trade",
+    "\"U.S.-China relations\" OR \"China relations\" OR diplomatic talks OR summit meeting",
+    "\"Xi Jinping\" meeting OR \"Donald Trump\" meeting OR leader summit OR bilateral talks",
 )
 
 

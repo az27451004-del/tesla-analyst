@@ -271,6 +271,9 @@ def _driver_for_text(text: str, category: str) -> str:
             "subsidy",
             "software ban",
             "tariff",
+            "trade deal",
+            "trade talks",
+            "trade negotiation",
             "policy",
             "nhtsa",
             "senator",
@@ -309,6 +312,16 @@ def _driver_for_text(text: str, category: str) -> str:
             "president speech",
             "election policy",
             "geopolitical",
+            "u.s.-china",
+            "us-china",
+            "china-us",
+            "china trade",
+            "trade talks",
+            "trade negotiation",
+            "summit",
+            "bilateral talks",
+            "xi jinping",
+            "donald trump",
         )
     ):
         return DRIVER_MACRO
