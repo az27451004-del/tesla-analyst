@@ -186,12 +186,26 @@ def _register_font(pdfmetrics: Any, TTFont: Any) -> str:
     candidates = [
         Path("/System/Library/Fonts/Supplemental/Arial Unicode.ttf"),
         Path("/System/Library/Fonts/PingFang.ttc"),
+        Path("/System/Library/Fonts/Supplemental/Songti.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"),
+        Path("/usr/share/fonts/opentype/noto/NotoSerifCJK-Regular.ttc"),
+        Path("/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc"),
         Path("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
     ]
     for font_path in candidates:
         if font_path.exists():
-            pdfmetrics.registerFont(TTFont("ReportFont", str(font_path)))
-            return "ReportFont"
+            try:
+                pdfmetrics.registerFont(TTFont("ReportFont", str(font_path)))
+                return "ReportFont"
+            except Exception:  # noqa: BLE001
+                continue
+    try:
+        from reportlab.pdfbase.cidfonts import UnicodeCIDFont
+
+        pdfmetrics.registerFont(UnicodeCIDFont("STSong-Light"))
+        return "STSong-Light"
+    except Exception:  # noqa: BLE001
+        pass
     return "Helvetica"
 
 
