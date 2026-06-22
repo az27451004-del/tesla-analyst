@@ -18,12 +18,14 @@ class RSSCollectionTest(unittest.TestCase):
             aliases_by_symbol={"TSLA": ["Tesla", "Tesla Inc"]},
             static_urls=["https://example.test/static.xml"],
             feed_templates=_feed_templates_from_config({}),
+            topic_queries=["Strait of Hormuz"],
         )
         urls = [feed.url for feed in feeds]
 
         self.assertTrue(any("news.google.com" in url for url in urls))
         self.assertTrue(any("feeds.finance.yahoo.com" in url and "TSLA" in url for url in urls))
         self.assertTrue(any("seekingalpha.com" in url and "TSLA" in url for url in urls))
+        self.assertTrue(any("Hormuz" in url for url in urls))
         self.assertIn("https://example.test/static.xml", urls)
 
     def test_cli_builds_multi_symbol_rss_config(self):
@@ -44,6 +46,8 @@ class RSSCollectionTest(unittest.TestCase):
                 "AAPL=Apple|Apple Inc",
                 "--rss-url",
                 "https://example.test/static.xml",
+                "--rss-topic-query",
+                "Strait of Hormuz",
             ]
         )
 
@@ -54,6 +58,7 @@ class RSSCollectionTest(unittest.TestCase):
         self.assertEqual(rss_config["company_aliases"]["TSLA"], ["Tesla", "Tesla Inc"])
         self.assertEqual(rss_config["company_aliases"]["AAPL"], ["Apple", "Apple Inc"])
         self.assertEqual(rss_config["urls"], ["https://example.test/static.xml"])
+        self.assertEqual(rss_config["topic_queries"], ["Strait of Hormuz"])
 
     def test_matches_news_to_symbols_with_aliases(self):
         aliases = {"TSLA": ["Tesla", "Tesla Inc"], "AAPL": ["Apple", "Apple Inc"], "NVDA": ["Nvidia", "NVIDIA Corp"]}
@@ -103,6 +108,33 @@ class RSSCollectionTest(unittest.TestCase):
         self.assertNotIn("sell_signal", serialized)
         self.assertNotIn("trade_plan", serialized)
         self.assertNotIn("generated_target_price", serialized)
+
+    def test_collect_data_keeps_market_topic_events_without_symbol_match(self):
+        request = CollectionRequest(
+            symbol="TSLA",
+            data_requirements=["news_events"],
+            data_source_config={
+                "rss": {
+                    "enabled": True,
+                    "symbols": ["TSLA"],
+                    "company_aliases": {"TSLA": ["Tesla"]},
+                    "topic_queries": ["Strait of Hormuz"],
+                    "feed_templates": ["https://example.test/{query}.xml"],
+                    "limit": 5,
+                }
+            },
+        )
+
+        with patch("stock_agent.collection.sources.rss.urllib.request.urlopen", side_effect=_fake_topic_urlopen):
+            result = collect_data(request)
+
+        titles = {event.title for event in result.news_events}
+        self.assertIn("Strait of Hormuz reopens as oil shipping resumes", titles)
+        topic_event = next(event for event in result.news_events if event.title == "Strait of Hormuz reopens as oil shipping resumes")
+        self.assertEqual(topic_event.raw_metadata["match_type"], "market_theme")
+        self.assertTrue(topic_event.raw_metadata["market_wide_event"])
+        self.assertEqual(topic_event.raw_metadata["market_topic_query"], "Strait of Hormuz")
+        self.assertAlmostEqual(topic_event.raw_metadata["requested_symbol_relevance"], 0.38)
 
     def test_static_rss_url_still_collects_matching_items(self):
         request = CollectionRequest(
@@ -217,6 +249,18 @@ def _fake_google_urlopen(request, timeout=30):
                 ("Stocks rise as broader market advances - Reuters", "No single stock mentioned", "https://example.test/broad"),
             ],
             channel_title='"Tesla" - Google News',
+        )
+    )
+
+
+def _fake_topic_urlopen(request, timeout=30):
+    return _FakeResponse(
+        _rss_xml(
+            [
+                ("Strait of Hormuz reopens as oil shipping resumes", "Oil supply risk eases after talks", "https://example.test/hormuz"),
+                ("Stocks rise as broader market advances", "No topic match needed because feed is market-wide", "https://example.test/broad"),
+            ],
+            channel_title='"Strait of Hormuz" - Google News',
         )
     )
 

@@ -33,8 +33,10 @@ DEFAULT_FEED_TEMPLATES = (
 class FeedRequest:
     url: str
     query_symbol: str = ""
+    topic_query: str = ""
     template_name: str = "static"
     generated: bool = False
+    market_wide: bool = False
 
 
 class RSSSource:
@@ -57,6 +59,7 @@ class RSSSource:
             aliases_by_symbol=aliases,
             static_urls=_urls_from_config(config.get("urls")),
             feed_templates=_feed_templates_from_config(config),
+            topic_queries=_topic_queries_from_config(config),
         )
         if not feed_requests:
             output.warnings.append(_warning("rss_urls_missing", "No RSS URLs configured.", self.name))
@@ -112,6 +115,7 @@ class RSSSource:
                 "symbols": symbols or [],
                 "generated_feed_count": sum(1 for feed in feeds if feed.generated),
                 "static_feed_count": sum(1 for feed in feeds if not feed.generated),
+                "market_topic_feed_count": sum(1 for feed in feeds if feed.market_wide),
             },
         )
 
@@ -193,6 +197,21 @@ def _filter_and_tag_events(
 ) -> list[NewsEvent]:
     filtered: list[NewsEvent] = []
     for event in events:
+        if feed.market_wide and feed.topic_query:
+            event.raw_metadata = {
+                **event.raw_metadata,
+                "feed_url": feed.url,
+                "matched_symbols": [],
+                "matched_terms": [],
+                "direct_symbol_match": False,
+                "match_type": "market_theme",
+                "market_wide_event": True,
+                "market_topic_query": feed.topic_query,
+                "requested_symbol_relevance": 0.38,
+                "query_symbol": "",
+            }
+            filtered.append(event)
+            continue
         matched_symbols, matched_terms = _match_event_symbols(event, symbols, aliases_by_symbol)
         if not matched_symbols:
             continue
@@ -375,12 +394,24 @@ def _feed_templates_from_config(config: dict[str, Any]) -> list[dict[str, str]]:
     return templates
 
 
+def _topic_queries_from_config(config: dict[str, Any]) -> list[str]:
+    if not isinstance(config, dict):
+        return []
+    raw_queries = config.get("topic_queries") or []
+    if isinstance(raw_queries, str):
+        values = raw_queries.split(",")
+    else:
+        values = list(raw_queries)
+    return _dedupe([str(item).strip() for item in values if str(item).strip()])
+
+
 def _build_feed_requests(
     *,
     symbols: list[str],
     aliases_by_symbol: dict[str, list[str]],
     static_urls: list[str],
     feed_templates: list[dict[str, str]],
+    topic_queries: list[str] | None = None,
 ) -> list[FeedRequest]:
     feeds: list[FeedRequest] = []
     for symbol in symbols:
@@ -393,6 +424,18 @@ def _build_feed_requests(
                     query_symbol=symbol,
                     template_name=template.get("name", "custom"),
                     generated=True,
+                )
+            )
+    topic_template = next((template for template in feed_templates if "{query}" in template["url"]), None)
+    if topic_template:
+        for topic_query in topic_queries or []:
+            feeds.append(
+                FeedRequest(
+                    url=_format_feed_url(topic_template["url"], "", topic_query),
+                    topic_query=topic_query,
+                    template_name=topic_template.get("name", "custom") + "_market_theme",
+                    generated=True,
+                    market_wide=True,
                 )
             )
     feeds.extend(FeedRequest(url=url) for url in static_urls)
@@ -425,10 +468,10 @@ def _quote_query_term(term: str) -> str:
 
 
 def _dedupe_feed_requests(feeds: list[FeedRequest]) -> list[FeedRequest]:
-    seen: set[tuple[str, str]] = set()
+    seen: set[tuple[str, str, str, bool]] = set()
     result: list[FeedRequest] = []
     for feed in feeds:
-        key = (feed.url, feed.query_symbol)
+        key = (feed.url, feed.query_symbol, feed.topic_query, feed.market_wide)
         if key in seen:
             continue
         seen.add(key)

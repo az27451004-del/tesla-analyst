@@ -5,6 +5,7 @@ from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 from stock_agent.automation.tesla_pre_open_email import (
+    _build_collection_request,
     build_email_body,
     determine_delivery_window,
     determine_trading_day,
@@ -72,6 +73,16 @@ class TeslaPreOpenEmailTest(unittest.TestCase):
             status = determine_delivery_window(datetime(2026, 6, 18, 8, 27, tzinfo=NEW_YORK_TZ))
         self.assertFalse(status.should_run)
         self.assertIn("不在发送窗口", status.reason)
+
+    def test_collection_request_includes_market_topic_queries(self):
+        with patch.dict(
+            os.environ,
+            {"NEWS_RSS_URLS": "https://example.test/static.xml", "MARKET_EVENT_RSS_QUERIES": "Strait of Hormuz,Federal Reserve speech"},
+            clear=False,
+        ):
+            request = _build_collection_request()
+        rss_config = request.data_source_config["rss"]
+        self.assertEqual(rss_config["topic_queries"], ["Strait of Hormuz", "Federal Reserve speech"])
 
 
 if __name__ == "__main__":

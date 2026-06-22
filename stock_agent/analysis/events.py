@@ -276,6 +276,11 @@ def _driver_for_text(text: str, category: str) -> str:
             "senator",
             "safety data",
             "misleading",
+            "sanction",
+            "sanctions",
+            "export control",
+            "white house",
+            "executive order",
         )
     ):
         return DRIVER_REGULATORY
@@ -287,13 +292,48 @@ def _driver_for_text(text: str, category: str) -> str:
         return DRIVER_VALUATION
     if any(term in text for term in ("earnings", "eps", "margin", "revenue", "cash flow", "guidance")):
         return DRIVER_FUNDAMENTAL
-    if category == "macro" or any(term in text for term in ("rate", "fed", "cpi", "inflation", "treasury", "dollar", "nasdaq", "vix")):
+    if category == "macro" or any(
+        term in text
+        for term in (
+            "rate",
+            "fed",
+            "cpi",
+            "inflation",
+            "treasury",
+            "dollar",
+            "nasdaq",
+            "vix",
+            "jerome powell",
+            "federal reserve",
+            "white house",
+            "president speech",
+            "election policy",
+            "geopolitical",
+        )
+    ):
         return DRIVER_MACRO
     if any(term in text for term in ("byd", "rivian", "lucid", "ford", "gm", "competition", "market share", "price war")):
         return DRIVER_COMPETITION
     if any(term in text for term in ("sec", "recall", "lawsuit", "investigation", "regulatory", "tariff", "subsidy")):
         return DRIVER_REGULATORY
-    if any(term in text for term in ("energy", "storage", "battery", "supply", "lithium", "raw material", "ev demand", "ev growth")):
+    if any(
+        term in text
+        for term in (
+            "energy",
+            "storage",
+            "battery",
+            "supply",
+            "lithium",
+            "raw material",
+            "ev demand",
+            "ev growth",
+            "oil",
+            "crude",
+            "hormuz",
+            "strait of hormuz",
+            "shipping lane",
+        )
+    ):
         return DRIVER_ENERGY
     return DRIVER_TECHNICAL
 

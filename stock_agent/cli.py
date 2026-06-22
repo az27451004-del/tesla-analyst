@@ -97,6 +97,12 @@ def build_parser() -> argparse.ArgumentParser:
     collect.add_argument("--sec-cik")
     collect.add_argument("--enable-fred", action="store_true")
     collect.add_argument("--rss-url", action="append", default=[])
+    collect.add_argument(
+        "--rss-topic-query",
+        action="append",
+        default=[],
+        help="Additional market-wide Google News topic query, e.g. 'Strait of Hormuz' or 'Federal Reserve speech'. Can be repeated.",
+    )
     collect.add_argument("--rss-symbols", help="Comma separated symbols for generated RSS feeds, e.g. TSLA,AAPL,NVDA")
     collect.add_argument(
         "--rss-alias",
@@ -158,10 +164,12 @@ def _build_collection_request(args: argparse.Namespace) -> CollectionRequest:
         data_source_config["sec_edgar"] = sec_config
     if args.enable_fred:
         data_source_config["fred"] = {"enabled": True}
-    if args.rss_url or args.rss_symbols or args.rss_alias:
+    if args.rss_url or args.rss_symbols or args.rss_alias or args.rss_topic_query:
         rss_config = {"enabled": True}
         if args.rss_url:
             rss_config["urls"] = args.rss_url
+        if args.rss_topic_query:
+            rss_config["topic_queries"] = args.rss_topic_query
         if args.rss_symbols:
             rss_config["symbols"] = _split_csv(args.rss_symbols)
         if args.rss_alias:
