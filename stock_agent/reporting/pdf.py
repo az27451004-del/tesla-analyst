@@ -240,7 +240,7 @@ def _discover_cjk_font_paths() -> list[Path]:
     for family in families:
         try:
             result = subprocess.run(
-                ["fc-match", "-f", "%{file}\n", family],
+                ["fc-match", "-f", "%{family}|%{file}\n", family],
                 stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL,
                 text=True,
@@ -248,13 +248,47 @@ def _discover_cjk_font_paths() -> list[Path]:
             )
         except FileNotFoundError:
             break
-        path_text = result.stdout.strip()
-        if not path_text:
+        output_text = result.stdout.strip()
+        if not output_text or "|" not in output_text:
             continue
-        path = Path(path_text)
+        family_text, path_text = output_text.split("|", 1)
+        path = Path(path_text.strip())
+        if not _is_usable_cjk_font_match(family_text, path):
+            continue
         if path.exists() and path not in paths:
             paths.append(path)
     return paths
+
+
+def _is_usable_cjk_font_match(family_text: str, path: Path) -> bool:
+    family_lower = family_text.strip().lower()
+    path_lower = str(path).lower()
+    if not path.exists():
+        return False
+    reject_tokens = ("dejavu", "liberation", "freesans", "freeserif")
+    if any(token in family_lower for token in reject_tokens):
+        return False
+    if any(token in path_lower for token in reject_tokens):
+        return False
+    accept_tokens = (
+        "cjk",
+        "han",
+        "song",
+        "hei",
+        "kai",
+        "ming",
+        "fang",
+        "yahei",
+        "noto sans cjk",
+        "noto serif cjk",
+        "source han",
+        "wenquanyi",
+        "ukai",
+        "uming",
+        "pingfang",
+    )
+    haystack = f"{family_lower} {path_lower}"
+    return any(token in haystack for token in accept_tokens)
 
 
 def _try_register_font(pdfmetrics: Any, TTFont: Any, font_path: Path) -> bool:
