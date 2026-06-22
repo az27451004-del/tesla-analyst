@@ -52,6 +52,13 @@ class TeslaPreOpenEmailTest(unittest.TestCase):
         self.assertTrue(status.should_run)
         self.assertTrue(status.enforced)
 
+    def test_delivery_window_force_run_bypasses_window(self):
+        with patch.dict(os.environ, {"ENFORCE_DELIVERY_WINDOW": "true", "FORCE_RUN": "true"}, clear=False):
+            status = determine_delivery_window(datetime(2026, 6, 18, 3, 18, tzinfo=NEW_YORK_TZ))
+        self.assertTrue(status.should_run)
+        self.assertIn("FORCE_RUN 已启用", status.reason)
+        self.assertTrue(status.enforced)
+
     def test_delivery_window_skips_outside_window(self):
         with patch.dict(os.environ, {"ENFORCE_DELIVERY_WINDOW": "true"}, clear=False):
             status = determine_delivery_window(datetime(2026, 6, 18, 8, 27, tzinfo=NEW_YORK_TZ))
@@ -61,4 +68,3 @@ class TeslaPreOpenEmailTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
