@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from stock_agent.analysis import DRIVER_DELIVERY, DRIVER_MACRO, DRIVER_NARRATIVE, analyze_collection, analyze_market_events
+from stock_agent.analysis import DRIVER_DELIVERY, DRIVER_ENERGY, DRIVER_MACRO, DRIVER_NARRATIVE, analyze_collection, analyze_market_events
 from stock_agent.collection.models import (
     CollectionResult,
     CollectionSummary,
@@ -189,6 +189,76 @@ class AnalysisLayerTest(unittest.TestCase):
         self.assertEqual(by_title["Electric vehicle growth slowing after U.S. support withdrawn"].driver, "监管/诉讼/政策")
         self.assertEqual(by_title["Electric vehicle growth slowing after U.S. support withdrawn"].direction, "负面")
         self.assertEqual(by_title["Tesla FSD robotaxi approval expands in Europe"].driver, DRIVER_NARRATIVE)
+
+    def test_geoeconomic_policy_event_uses_market_framework(self):
+        analysis = analyze_market_events(
+            symbol="TSLA",
+            prices=[PricePoint(date=f"2026-06-{day:02d}", close=100 + day, volume=1000) for day in range(1, 22)],
+            events=[
+                NewsEvent(
+                    title="Trump tariff policy pressures China trade talks and U.S. capital flows",
+                    source="Reuters",
+                    source_reliability=0.75,
+                )
+            ],
+        )
+
+        signal = analysis.event_signals[0]
+        self.assertEqual(signal.interpretation_framework, "美国地缘经济优先")
+        self.assertIn(signal.event_scope, {"市场级事件", "行业相关事件"})
+        self.assertIn("油价、美元、美债收益率、通胀预期和资本流向", signal.impact_reason)
+
+    def test_geoeconomic_energy_event_explains_market_transmission(self):
+        analysis = analyze_market_events(
+            symbol="TSLA",
+            prices=[PricePoint(date=f"2026-06-{day:02d}", close=100 + day, volume=1000) for day in range(1, 22)],
+            events=[
+                NewsEvent(
+                    title="Iran talks ease Strait of Hormuz oil risk",
+                    summary_raw="Brent crude falls as Middle East oil risk cools inflation worries and Treasury yield pressure.",
+                    source="Reuters",
+                    source_reliability=0.75,
+                )
+            ],
+        )
+
+        signal = analysis.event_signals[0]
+        self.assertIn(signal.driver, {DRIVER_ENERGY, DRIVER_MACRO})
+        self.assertEqual(signal.interpretation_framework, "美国地缘经济优先")
+        self.assertEqual(signal.event_scope, "市场级事件")
+        self.assertIn("风险偏好", signal.impact_reason)
+
+    def test_regular_tesla_company_news_does_not_use_geoeconomic_framework(self):
+        analysis = analyze_market_events(
+            symbol="TSLA",
+            prices=[PricePoint(date=f"2026-06-{day:02d}", close=100 + day, volume=1000) for day in range(1, 22)],
+            events=[
+                NewsEvent(title="Tesla AI chip team sets new wafer intelligence target", source="Reuters", source_reliability=0.75),
+            ],
+        )
+
+        signal = analysis.event_signals[0]
+        self.assertEqual(signal.driver, DRIVER_NARRATIVE)
+        self.assertEqual(signal.event_scope, "公司级事件")
+        self.assertEqual(signal.interpretation_framework, "")
+
+    def test_direct_symbol_policy_event_is_not_company_scope(self):
+        analysis = analyze_market_events(
+            symbol="TSLA",
+            prices=[PricePoint(date=f"2026-06-{day:02d}", close=100 + day, volume=1000) for day in range(1, 22)],
+            events=[
+                NewsEvent(
+                    title="Tesla mentioned as Trump tariff policy reshapes China trade talks",
+                    source="Reuters",
+                    source_reliability=0.75,
+                    raw_metadata={"match_type": "direct_symbol"},
+                ),
+            ],
+        )
+
+        signal = analysis.event_signals[0]
+        self.assertEqual(signal.interpretation_framework, "美国地缘经济优先")
+        self.assertEqual(signal.event_scope, "行业相关事件")
 
     def test_delivery_forecast_news_maps_to_delivery_driver(self):
         analysis = analyze_market_events(

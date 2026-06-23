@@ -268,13 +268,14 @@ def _append_important_events(lines: list[str], events: list[Any]) -> None:
         lines.append("")
         return
     _append_impact_score_meaning(lines)
-    lines.append("| 排名 | 发布时间 | 驱动因子 | 方向 | 影响等级 | 来源 | 中文标题 / 原题译文 |")
-    lines.append("|---:|---|---|---|---|---|---|")
+    lines.append("| 排名 | 事件层级 | 解释框架 | 发布时间 | 驱动因子 | 方向 | 影响等级 | 来源 | 中文标题 / 原题译文 |")
+    lines.append("|---:|---|---|---|---|---|---|---|---|")
     for index, event in enumerate(events[:10], 1):
         item = _dict(event)
         title = _text(item.get("title"))
         lines.append(
-            f"| {index} | {_cell(_event_display_time(item))} | {_cell(item.get('driver'))} | {_cell(item.get('direction'))} | "
+            f"| {index} | {_cell(item.get('event_scope'))} | {_cell(_framework_display(item))} | {_cell(_event_display_time(item))} | "
+            f"{_cell(item.get('driver'))} | {_cell(item.get('direction'))} | "
             f"{_cell(_impact_level(item.get('impact_score')))} | {_cell(item.get('source'))} | "
             f"{_cell(event_title_with_translation(title, item.get('driver')))} |"
         )
@@ -284,6 +285,8 @@ def _append_important_events(lines: list[str], events: list[Any]) -> None:
         item = _dict(event)
         title = _text(item.get("title"))
         lines.append(f"**{index}. {event_title_with_translation(title, item.get('driver'))}**")
+        lines.append(f"- 事件层级：{_text(item.get('event_scope'), '公司级事件')}")
+        lines.append(f"- 解读框架：{_framework_display(item)}")
         lines.append(f"- 发布时间：{_text(_event_display_time(item), '未提供')}")
         lines.append(f"- 英文原题：{_text(title)}")
         lines.append(f"- 影响等级：{_impact_level(item.get('impact_score'))}；具体影响分：{_num(item.get('impact_score'), 3)}")
@@ -452,6 +455,10 @@ def _event_display_time(event: dict[str, Any]) -> str:
         if value not in (None, ""):
             return _format_report_time(value)
     return ""
+
+
+def _framework_display(event: dict[str, Any]) -> str:
+    return _text(event.get("interpretation_framework"), "无")
 
 
 def _format_report_time(value: Any) -> str:

@@ -17,6 +17,7 @@ def _write_analysis_json(path: Path) -> None:
     events = [
         Event(source="Reuters", title="Tesla deliveries beat consensus with record growth"),
         Event(source="SEC", title="Tesla faces regulatory investigation and recall"),
+        Event(source="Reuters", title="Trump tariff policy pressures China trade talks and U.S. capital flows"),
     ]
     analysis = analyze_market_events(
         symbol="TSLA",
@@ -175,6 +176,9 @@ class DecisionCLITest(unittest.TestCase):
             self.assertIn("## 六类画像结果对比", report)
             self.assertIn("## 重要资讯中文摘要", report)
             self.assertIn("中文标题 / 原题译文", report)
+            self.assertIn("事件层级", report)
+            self.assertIn("解释框架", report)
+            self.assertIn("美国地缘经济优先", report)
             self.assertIn("发布时间", report)
             self.assertIn("特斯拉面临监管调查和召回风险", report)
             self.assertIn("影响分含义说明", report)

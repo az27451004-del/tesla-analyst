@@ -29,6 +29,20 @@ REQUIRED_SMTP_VARS = (
 DEFAULT_REQUIREMENTS = ("market_data", "filings", "news_events", "macro_data")
 DEFAULT_WINDOW_START = "07:20"
 DEFAULT_WINDOW_END = "07:35"
+DEFAULT_MARKET_TOPIC_QUERIES = (
+    "Federal Reserve OR Jerome Powell OR rate cut OR inflation OR Treasury yield",
+    "\"Strait of Hormuz\" OR Hormuz OR Iran talks OR Middle East oil supply",
+    "tariff OR sanctions OR export controls OR trade war",
+    "\"America First\" economic policy OR \"Trump economic policy\" OR \"economic security\"",
+    "\"capital flows\" OR \"capital inflows\" OR \"capital return\" OR \"U.S. assets\"",
+    "\"tariff policy\" OR \"China trade talks\" OR \"export controls\"",
+    "\"Middle East oil risk\" OR \"oil supply risk\" OR \"shipping lane risk\"",
+    "\"White House speech\" OR \"president speech\" OR \"Trump speech\"",
+    "\"White House\" policy speech OR U.S. president speech OR election policy",
+    "\"U.S.-China\" OR \"US-China\" OR \"China-US\" OR China trade talks OR U.S. China trade",
+    "\"U.S.-China relations\" OR \"China relations\" OR diplomatic talks OR summit meeting",
+    "\"Xi Jinping\" meeting OR \"Donald Trump\" meeting OR leader summit OR bilateral talks",
+)
 
 
 @dataclass(frozen=True)
@@ -300,12 +314,14 @@ def _build_collection_request() -> CollectionRequest:
     if os.getenv("FRED_API_KEY"):
         data_source_config["fred"] = {"enabled": True}
     rss_urls = [item.strip() for item in os.getenv("NEWS_RSS_URLS", "").split(",") if item.strip()]
+    market_topic_queries = _market_topic_queries()
     if rss_urls:
         data_source_config["rss"] = {
             "enabled": True,
             "urls": rss_urls,
             "symbols": ["TSLA"],
             "company_aliases": {"TSLA": ["Tesla", "Tesla Inc", "Tesla Motors"]},
+            "topic_queries": market_topic_queries,
             "limit": 30,
         }
     return CollectionRequest(
@@ -316,6 +332,13 @@ def _build_collection_request() -> CollectionRequest:
         allow_realtime=True,
         data_source_config=data_source_config,
     )
+
+
+def _market_topic_queries() -> list[str]:
+    raw = os.getenv("MARKET_EVENT_RSS_QUERIES", "").strip()
+    if not raw:
+        return list(DEFAULT_MARKET_TOPIC_QUERIES)
+    return [item.strip() for item in raw.split(",") if item.strip()]
 
 
 def build_email_body(summary: dict[str, Any]) -> str:
@@ -470,4 +493,3 @@ def _write_json(path: Path, payload: Any) -> None:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
