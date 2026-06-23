@@ -52,7 +52,13 @@ class AnalysisReportTest(unittest.TestCase):
                         source="Reuters",
                         source_reliability=0.75,
                         related_symbols=["TSLA"],
-                    )
+                    ),
+                    NewsEvent(
+                        title="Trump tariff policy pressures China trade talks and U.S. capital flows",
+                        summary_raw="Policy event affects capital flows, inflation expectations, and risk appetite.",
+                        source="Reuters",
+                        source_reliability=0.75,
+                    ),
                 ],
                 filings=[
                     FilingEvent(
@@ -112,6 +118,8 @@ class AnalysisReportTest(unittest.TestCase):
             self.assertIn("中文标题", report)
             self.assertIn("中文标题 / 原题译文", report)
             self.assertIn("事件层级", report)
+            self.assertIn("解释框架", report)
+            self.assertIn("美国地缘经济优先", report)
             self.assertIn("发布时间", report)
             self.assertIn("特斯拉 AI 芯片团队设定新目标", report)
             self.assertIn("影响分含义说明", report)

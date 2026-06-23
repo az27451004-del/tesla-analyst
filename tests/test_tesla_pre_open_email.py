@@ -5,6 +5,7 @@ from unittest.mock import patch
 from zoneinfo import ZoneInfo
 
 from stock_agent.automation.tesla_pre_open_email import (
+    DEFAULT_MARKET_TOPIC_QUERIES,
     _build_collection_request,
     build_email_body,
     determine_delivery_window,
@@ -83,6 +84,12 @@ class TeslaPreOpenEmailTest(unittest.TestCase):
             request = _build_collection_request()
         rss_config = request.data_source_config["rss"]
         self.assertEqual(rss_config["topic_queries"], ["Strait of Hormuz", "Federal Reserve speech"])
+
+    def test_default_market_topic_queries_include_geoeconomic_themes(self):
+        joined = " ".join(DEFAULT_MARKET_TOPIC_QUERIES)
+        self.assertIn("America First", joined)
+        self.assertIn("capital flows", joined)
+        self.assertIn("Trump economic policy", joined)
 
 
 if __name__ == "__main__":

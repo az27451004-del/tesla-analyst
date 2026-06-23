@@ -536,7 +536,7 @@ def _table_widths(headers: list[str], usable_width: float) -> list[float]:
     if headers[:2] == ["画像", "当前倾向"]:
         weights = [2.3, 1.35, 1.45, 1.3, 1.3, 1.2]
     elif headers[:2] == ["排名", "事件层级"]:
-        weights = [0.5, 1.0, 1.2, 1.1, 0.7, 0.95, 1.0, 2.85][: len(headers)]
+        weights = [0.45, 0.9, 1.05, 1.15, 1.05, 0.65, 0.85, 0.85, 2.6][: len(headers)]
     elif headers[:2] == ["排名", "发布时间"]:
         weights = [0.55, 1.35, 1.2, 0.75, 1.05, 1.05, 3.25][: len(headers)]
     elif headers[:3] == ["排名", "驱动因子", "方向"]:

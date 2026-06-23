@@ -23,6 +23,47 @@ from .models import EventSignal, MarketState
 from .utils import field_value, number
 
 
+GEO_ECONOMIC_FRAMEWORK = "美国地缘经济优先"
+GEO_ECONOMIC_TERMS = (
+    "america first",
+    "america first trade",
+    "american economic security",
+    "capital flows",
+    "capital inflow",
+    "capital return",
+    "capital flight",
+    "china trade talks",
+    "china trade",
+    "china-us",
+    "donald trump",
+    "economic security",
+    "election policy",
+    "export control",
+    "export controls",
+    "geoeconomic",
+    "geopolitical",
+    "hormuz",
+    "iran talks",
+    "middle east oil",
+    "national security",
+    "president speech",
+    "sanction",
+    "sanctions",
+    "strait of hormuz",
+    "summit",
+    "tariff",
+    "tariff policy",
+    "trade negotiation",
+    "trade talks",
+    "trade war",
+    "trump economic policy",
+    "u.s.-china",
+    "us-china",
+    "white house",
+    "xi jinping",
+)
+
+
 def build_event_signals(events: Iterable[Any]) -> tuple[EventSignal, ...]:
     signals = (_event_signal(event) for event in events)
     return tuple(sorted(signals, key=lambda item: item.impact_score, reverse=True))
@@ -77,6 +118,7 @@ def _event_signal(event: Any) -> EventSignal:
     reliability = number(field_value(event, "source_reliability"), 0.5)
     raw_metadata = field_value(event, "raw_metadata", default={}) or {}
     driver = _driver_for_text(text, category)
+    interpretation_framework = _interpretation_framework(text, category, raw_metadata)
     direction = "正面" if sentiment > 0.15 else "负面" if sentiment < -0.15 else "中性"
     base = _driver_base_weight(driver)
     relevance = _event_relevance(raw_metadata)
@@ -102,7 +144,8 @@ def _event_signal(event: Any) -> EventSignal:
         title=title,
         source=str(field_value(event, "source", "publisher", "institution", default="") or ""),
         published_at=_event_timestamp(event, raw_metadata),
-        event_scope=_event_scope(raw_metadata, relevance),
+        event_scope=_event_scope(raw_metadata, relevance, interpretation_framework, text),
+        interpretation_framework=interpretation_framework,
         category=category or "news",
         driver=driver,
         direction=direction,
@@ -111,7 +154,7 @@ def _event_signal(event: Any) -> EventSignal:
         surprise_level="待验证" if "guidance" in text or "consensus" in text or "预期" in text else "未知",
         source_reliability=round(reliability, 3),
         evidence=summary[:240],
-        impact_reason=_impact_reason(driver, direction, title, summary, sentiment),
+        impact_reason=_impact_reason(driver, direction, title, summary, sentiment, interpretation_framework),
         counterpoint=_counterpoint(driver, direction),
         quantitative_evidence=quantitative_evidence,
         score_breakdown=score_breakdown,
@@ -130,7 +173,7 @@ def _event_timestamp(event: Any, raw_metadata: Any) -> str:
     return ""
 
 
-def _event_scope(raw_metadata: Any, relevance: float) -> str:
+def _event_scope(raw_metadata: Any, relevance: float, interpretation_framework: str = "", text: str = "") -> str:
     if isinstance(raw_metadata, dict):
         match_type = str(raw_metadata.get("match_type") or "").strip().lower()
         if match_type == "market_theme" or raw_metadata.get("market_wide_event"):
@@ -138,7 +181,13 @@ def _event_scope(raw_metadata: Any, relevance: float) -> str:
         if match_type == "indirect_related":
             return "行业相关事件"
         if match_type == "direct_symbol":
+            if interpretation_framework:
+                return "行业相关事件"
             return "公司级事件"
+    if interpretation_framework:
+        if _has_any_phrase(text, ("tesla", "tsla")) and relevance >= 0.85:
+            return "行业相关事件"
+        return "市场级事件"
     if relevance < 0.55:
         return "市场级事件"
     if relevance < 0.85:
@@ -202,7 +251,14 @@ def _quantitative_evidence(event: Any, raw_metadata: Any) -> tuple[str, ...]:
     return ("原始事件未提供可量化数值；当前方向主要来自标题/摘要关键词和来源可信度。",)
 
 
-def _impact_reason(driver: str, direction: str, title: str, summary: str, sentiment: float) -> str:
+def _impact_reason(
+    driver: str,
+    direction: str,
+    title: str,
+    summary: str,
+    sentiment: float,
+    interpretation_framework: str = "",
+) -> str:
     text = f"{title} {summary}".lower()
     if driver == DRIVER_NARRATIVE:
         reason = "FSD/Robotaxi/AI 事件会影响市场对特斯拉软件收入、自动驾驶商业化和长期估值倍数的预期。"
@@ -230,7 +286,27 @@ def _impact_reason(driver: str, direction: str, title: str, summary: str, sentim
     else:
         prefix = "判为中性："
     keyword_note = _matched_keyword_note(text, sentiment)
-    return f"{prefix}{reason}{keyword_note}"
+    framework_note = _framework_impact_note(interpretation_framework)
+    return f"{prefix}{reason}{keyword_note}{framework_note}"
+
+
+def _interpretation_framework(text: str, category: str, raw_metadata: Any) -> str:
+    metadata_text = ""
+    if isinstance(raw_metadata, dict):
+        metadata_text = " ".join(str(value) for value in raw_metadata.values() if value not in (None, ""))
+    combined = f"{text} {category} {metadata_text}".lower()
+    if any(term in combined for term in GEO_ECONOMIC_TERMS):
+        return GEO_ECONOMIC_FRAMEWORK
+    return ""
+
+
+def _framework_impact_note(interpretation_framework: str) -> str:
+    if interpretation_framework != GEO_ECONOMIC_FRAMEWORK:
+        return ""
+    return (
+        " 解读框架提示：按美国地缘经济优先假设，本事件需要验证政治/贸易/能源动作是否通过油价、美元、"
+        "美债收益率、通胀预期和资本流向改变风险偏好，再间接影响 TSLA 估值或供应链。"
+    )
 
 
 def _matched_keyword_note(text: str, sentiment: float) -> str:

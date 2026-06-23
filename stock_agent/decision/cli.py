@@ -125,6 +125,9 @@ def _event_signal_from_dict(payload: Any) -> EventSignal:
     return EventSignal(
         title=str(item.get("title") or ""),
         source=str(item.get("source") or ""),
+        published_at=str(item.get("published_at") or ""),
+        event_scope=str(item.get("event_scope") or "公司级事件"),
+        interpretation_framework=str(item.get("interpretation_framework") or ""),
         category=str(item.get("category") or "news"),
         driver=str(item.get("driver") or "技术面/期权/资金流"),
         direction=str(item.get("direction") or "中性"),
