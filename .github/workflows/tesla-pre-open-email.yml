@@ -9,8 +9,8 @@ on:
         default: true
         type: boolean
   schedule:
+    # 07:27 America/New_York during U.S. daylight saving time.
     - cron: "27 11 * * 1-5"
-    - cron: "27 12 * * 1-5"
 
 jobs:
   send-report:
@@ -57,7 +57,7 @@ jobs:
           FORCE_RUN: "false"
         run: python -m unittest tests.test_tesla_pre_open_email
 
-      - name: Run TSLA pre-open automation (manual test bypasses window)
+      - name: Run TSLA pre-open automation
         run: python -m stock_agent.automation.tesla_pre_open_email
 
       - name: Upload automation outputs
